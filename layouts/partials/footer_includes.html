@@ -1,0 +1,27 @@
+{{ $vue := resources.Get "js/lib/vue.min.js" }}
+{{ $vendor := slice $vue | resources.Concat "js/vendor.js" }}
+<script src="{{ $vendor.Permalink | relURL }}"></script>
+
+{{ $components := resources.Get "js/components.js" }}
+{{ $menu := resources.Get "js/menu.js" }}
+{{ $js := slice $menu $components | resources.Concat "js/bundle.js" }}
+<script src="{{ $js.Permalink | relURL }}"></script>
+
+{{ if .Site.IsServer }}
+    <script>console.log('Skipping Analytics');</script>
+{{ else }}
+    <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
+    <script>
+        (function(f, a, t, h, o, m){
+            a[h]=a[h]||function(){
+                (a[h].q=a[h].q||[]).push(arguments)
+            };
+            o=f.createElement('script'),
+                m=f.getElementsByTagName('script')[0];
+            o.async=1; o.src=t; o.id='fathom-script';
+            m.parentNode.insertBefore(o,m)
+        })(document, window, '//analytics.jasonraimondi.com/tracker.js', 'fathom');
+        fathom('set', 'siteId', 'YJMFD');
+        fathom('trackPageview');
+    </script>
+{{ end }}

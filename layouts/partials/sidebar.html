@@ -1,0 +1,43 @@
+<a class="avatar" href="/">
+    <img src="{{ .Site.Params.ProfileURL }}" alt="{{ .Site.Params.Name }} Profile Picture" />
+</a>
+
+<ul class="list-reset">
+    <li class="sidebar-site-name">
+        <h1>{{ .Site.Params.Name }}</h1>
+    </li>
+    {{ with $.Site.Params.ResumePDF }}
+    <li>
+        <a href="{{ "/resume" | absURL }}" target="_blank">R&eacute;sum&eacute;</a>
+        <a href="{{ . | absURL }}" target="_blank" class="label">
+            <span>pdf</span>
+        </a>
+        {{ with $.Site.Params.ResumeJSON }}
+        <a href="{{ . | absURL }}" target="_blank" class="label">
+            <span>json</span>
+        </a>
+        {{ end }}
+    </li>
+    {{ end }}
+    {{ range .Site.Params.MainMenu.Link }}
+    <li><a href="{{ .url | absURL }}">{{ .name }}</a></li>
+    {{ end }}
+</ul>
+
+<ul class="list-reset">
+    <li class="sidebar-title">
+        <h6>{{ .Site.Params.ProjectsMenu.Title }}</h6>
+    </li>
+    {{ range .Site.Params.ProjectsMenu.Link }}
+    <li><a href="{{ .url | absURL }}">{{ .name }}</a></li>
+    {{ end }}
+</ul>
+
+<ul class="list-reset">
+    <li class="sidebar-title">
+        <h5>{{ .Site.Params.ExternalMenu.Title }}</h5>
+    </li>
+    {{ range .Site.Params.ExternalMenu.Link }}
+    <li><a href="{{ .url | absURL }}" target="_blank" rel="nofollow">{{ .name }}</a></li>
+    {{ end }}
+</ul>

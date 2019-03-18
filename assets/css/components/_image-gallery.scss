@@ -1,0 +1,24 @@
+@import '../variables';
+
+.image-gallery-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.image-gallery-container img {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+.image-gallery-anchor {
+  text-decoration: none;
+  font-style: italic;
+  color: $grey;
+  a:hover {
+    background-image: none !important;
+  }
+}
+
+.image-alt-text {
+}

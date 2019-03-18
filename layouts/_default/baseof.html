@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+{{ partial "head.html" . }}
+<body>
+<main class="main-content">
+    <aside class="sidebar">
+        {{ partial "sidebar.html" . }}
+    </aside>
+    <div class="page-content">
+        <div class="width-constrain">
+            {{ partial "mobile-nav.html" . }}
+            {{ block "main" . }}
+            {{ end }}
+        </div>
+    </div>
+</main>
+{{ partial "footer_includes.html" . }}
+</body>
+</html>

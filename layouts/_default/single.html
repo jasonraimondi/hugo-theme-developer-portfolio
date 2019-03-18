@@ -1,0 +1,90 @@
+{{ define "main" }}
+<article class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="name headline">{{ .Title }}</h1>
+        <p class="post-list-date">
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person" style="display: none;">
+                <span itemprop="name" style="font-size: 1rem;">Jason Raimondi</span>
+            </span>
+            Published:
+            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+            {{ .Date.Format "January 2, 2006" }}
+            </time>
+            {{ if ne .Date .Page.Lastmod }}
+                Last Modified:
+                <time datetime="{{ .Page.Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+                {{ .Page.Lastmod.Format "January 2, 2006" }}
+                </time>
+            {{ end }}
+        </p>
+    </header>
+    <section id="post-content">
+        <ul class="list-reset">
+            {{ $taxonomyCategory := "categories" }}
+            {{ with .Param $taxonomyCategory }}
+                {{ range $index, $category := . }}
+                    {{ with $.Site.GetPage (printf "/%s/%s" $taxonomyCategory $category) -}}
+                        <li class="label" style="margin-right:3.5px">
+                            <a href="{{ .Permalink }}">{{ $category | urlize }}</a>
+                        </li>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+            {{ $taxonomyTag := "tags" }}
+            {{ with .Param $taxonomyTag }}
+                {{ range $index, $tag := . }}
+                    {{ with $.Site.GetPage (printf "/%s/%s" $taxonomyTag $tag) -}}
+                        <li class="label" style="margin-right:3.5px">
+                            <a href="{{ .Permalink }}">{{ $tag | urlize }}</a>
+                        </li>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        </ul>
+        <article class="post-body" itemprop="articleBody">
+            {{ .Content }}
+        </article>
+    </section>
+    {{ if .Params.tags }}
+    <footer class="related-posts">
+        <hr>
+        <h4>Related Posts</h4>
+        {{ $currentPagePermalink := .Permalink }}
+        {{ $tags := .Params.tags }}
+        <ul class="list-reset">
+            {{ range .Site.Pages }}
+                {{ $isMatchTags := intersect $tags .Params.tags | len | lt 0 }}
+                {{ if and $isMatchTags (ne .Permalink $currentPagePermalink) }}
+                    <li><a href="{{ .Permalink | absURL }}">{{ .Title }}</a></li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    </footer>
+    {{ end }}
+</article>
+
+<script>
+    const addHeaderDeepLinks = function() {
+        const postDoc = document.getElementById('post-content');
+        const elements = [
+            postDoc.getElementsByTagName('h2'),
+            postDoc.getElementsByTagName('h3'),
+            postDoc.getElementsByTagName('h4'),
+            postDoc.getElementsByTagName('h5'),
+            postDoc.getElementsByTagName('h6'),
+        ];
+        for (let i = 0; i < elements.length; i++) {
+            for (let k = 0; k < elements[i].length; k++) {
+                const header = elements[i][k];
+                const anchor = document.createElement('a');
+                anchor.className = 'header-link';
+                anchor.href = '#' + header.id;
+                anchor.innerHTML = '#';
+                header.insertBefore(anchor, header.firstChild);
+            }
+        }
+    };
+    addHeaderDeepLinks();
+</script>
+{{ end }}

@@ -1,0 +1,73 @@
+@import 'variables';
+
+//
+//.post-container header h1 {
+//  margin-bottom: 1rem;
+//  font-size: 1.5rem;
+//}
+//
+.date
+  //.post-container time,
+  //.post-container span[itemprop="author"]
+{
+  color: $grey;
+}
+
+#post-content {
+  height: 100%;
+  width: 100%;
+
+  p {
+    line-height: 1.8;
+  }
+
+  p,
+  ol,
+  ul,
+  div,
+  pre {
+    margin-bottom: 1rem;
+  }
+
+  small {
+    line-height: 1.2;
+  }
+
+  iframe {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  ol,
+  ul {
+    margin-left: 0.25rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .header-link {
+    color: $green;
+    margin-right: 0.5rem;
+
+    &:hover {
+      color: $green-dark;
+      border-bottom: 2px solid $green-dark;
+    }
+  }
+}
+
+.related-posts {
+  margin-top: 3rem;
+
+  ul li {
+    margin-bottom: 1rem;
+  }
+}

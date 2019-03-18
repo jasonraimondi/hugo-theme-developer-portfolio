@@ -1,0 +1,61 @@
+@import '../variables';
+
+.image-pop-container {
+  margin: 15px auto 30px;
+}
+
+.image-pop-container.portrait {
+  @media #{$large} {
+    margin: 0 15%;
+  }
+
+  @media #{$xlarge} {
+    margin: 0 20%;
+  }
+
+  @media #{$xxlarge} {
+    margin: 0 25%;
+  }
+}
+
+.image-pop-container > img {
+  margin: 10px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+
+.image-pop-title {
+  font-style: italic;
+  color: $grey;
+  font-smooth: always;
+}
+
+.pops {
+  max-width: 100%;
+  width: 100%;
+  transition: all 200ms;
+}
+
+@media #{$large} {
+  .pops:hover {
+    max-width: 104% !important;
+    width: 104% !important;
+    margin-left: -2%;
+  }
+}
+
+@media #{$xlarge} {
+  .pops:hover {
+    max-width: 110% !important;
+    width: 110% !important;
+    margin-left: -5%;
+  }
+}
+
+@media #{$xxlarge} {
+  .pops:hover {
+    max-width: 114% !important;
+    width: 114% !important;
+    margin-left: -7%;
+  }
+}

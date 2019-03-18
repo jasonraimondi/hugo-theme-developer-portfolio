@@ -1,0 +1,64 @@
+{{ $profileURL := .Site.Params.ProfileURL }}
+{{ $twitter := .Site.Params.Twitter }}
+
+{{ $title := .Site.Title }}
+{{ if .Page.Title }}
+    {{ $title = .Page.Title }}
+{{ end }}
+
+{{ $description := .Site.Params.Description }}
+{{ if .Page.Description }}
+    {{ $description = .Page.Description }}
+{{ end }}
+
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title> {{ .Site.Params.Name }} | {{ $title }} </title>
+<meta name="author" content="{{ .Site.Params.Name }}{{ with .Site.Params.Email }} <{{ . }}>{{ end }}" />
+<meta name="description" content="{{ $description | truncate 160 }}" />
+
+<link rel="canonical" href="{{ .Permalink }}" />
+<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .RSSLink | absURL }}">
+
+<link rel="shortcut icon" href='{{ "/favicon.ico" | absURL}}'>
+<link rel="apple-touch-icon" sizes="180x180" href='{{ "/apple-touch-icon.png" | absURL}}'>
+<link rel="icon" type="image/png" sizes="32x32" href='{{ "/favicon-32x32.png" | absURL}}'>
+<link rel="icon" type="image/png" sizes="16x16" href='{{ "/favicon-16x16.png" | absURL}}'>
+<link rel="manifest" href='{{ "/site.webmanifest" | absURL}}'>
+<link rel="mask-icon" href='{{ "/safari-pinned-tab.svg" | absURL}}' color="#59c270">
+
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:title" content="{{ $title }}" />
+<meta property="og:description" content="{{ $description | truncate 300 }}" />
+<meta property="og:site_name" content="{{ $title }}" />
+<meta property="og:image" content="{{ $profileURL | absURL }}" />
+
+<meta property="fb:app_id" content="000000" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+
+<meta name="twitter:card" content="{{ $title }}">
+{{ with $twitter }}<meta name="twitter:site" content="@{{ . }}">{{ end }}
+<meta name="twitter:url" content="{{ .Permalink }}">
+<meta name="twitter:title" content="{{  $title }}">
+<meta name="twitter:description" content="{{ $description | truncate 160 }}">
+<meta name="twitter:image" content="{{ $profileURL | absURL }}">
+
+<style>
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    }
+</style>
+
+{{ if .Site.IsServer }}
+    {{ $style := resources.Get "css/style.scss" | toCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" emotion="🤩">
+{{ else }}
+    {{ $style := resources.Get "css/style.scss" | toCSS | postCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" emotion="🤩">
+{{ end }}

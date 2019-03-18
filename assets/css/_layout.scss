@@ -1,0 +1,116 @@
+@import 'variables';
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+}
+
+@mixin scrollable() {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.main-content {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "content";
+}
+
+.sidebar {
+  display: none;
+  max-width: $sidebar-width;
+  grid-area: sidebar;
+  @include scrollable();
+}
+
+.page-content {
+  grid-area: content;
+  @include scrollable();
+}
+
+// technically this should be small and medium only, that would fix an issue that appears when you
+// have a small window and open the menu, and then enlarge the browser, the content is off center
+// for now, a refresh is fine...
+.sidebar-is-open {
+  .main-content {
+    grid-template-columns: $sidebar-width 100%;
+    grid-template-areas: "sidebar content";
+    overflow-x: hidden;
+  }
+  .sidebar {
+    display: block;
+  }
+}
+
+@media #{$large} {
+  .main-content {
+    grid-template-columns: $sidebar-width 1fr;
+    grid-template-areas: "sidebar content";
+  }
+  .sidebar {
+    display: block;
+  }
+}
+
+.mobile-nav {
+  margin: 2rem 0 1rem;
+  display: flex;
+  align-items: center;
+
+  @media #{$large} {
+    display: none;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.width-constrain {
+  width: 100%;
+  height: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  @media #{$medium} {
+    max-width: $container-width-md;
+  }
+  @media #{$large} {
+    max-width: $container-width-lg;
+  }
+  @media #{$xlarge} {
+    max-width: $container-width-xl;
+  }
+  @media #{$xxlarge} {
+    max-width: $container-width-xxl;
+  }
+  > .post-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    .post-body {
+      height: 100%;
+      flex: 1;
+    }
+  }
+}
+
+.pdf-container {
+  width: 100%;
+  height: 100%;
+}

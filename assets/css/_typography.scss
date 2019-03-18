@@ -1,0 +1,99 @@
+@import 'variables';
+
+html,
+body {
+  font-size: $base-rem;
+  font-family: $sans;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $green;
+  text-decoration: none;
+  &:hover {
+    color: $green-darker;
+  }
+  &:active,
+  &:focus,
+  &:visited {
+    color: $green-dark;
+  }
+}
+
+pre {
+  color: $grey-lighter;
+  border-radius: 0.35rem;
+  padding: 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+code {
+  line-height: 1.4;
+  font-family: $mono;
+  background-color: $black;
+  color: $white;
+  padding: 2px 6px 0;
+  border-radius: 4px;
+  font-weight: lighter;
+}
+
+.highlight > pre > code {
+  padding: 0;
+  background-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6, p, li {
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-size: 1.888rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+h5 {
+  font-size: 1.063rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+@media #{$large} {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.563rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "jasontheme",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^9.4.10",
+    "postcss-cli": "^6.1.2"
+  }
+}
