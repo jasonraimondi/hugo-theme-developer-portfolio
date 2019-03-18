@@ -1,14 +1,11 @@
-# theme.toml template for a Hugo theme
-# See https://github.com/gohugoio/hugoThemes#themetoml for an example
-
-name = "jasontheme"
+name = "developer-theme"
 license = "MIT"
-licenselink = "https://github.com/jasonraimondi/hugo-theme-developer/blob/master/LICENSE"
+licenselink = "https://github.com/jasonraimondi/hugo-theme-developer-portfolio/blob/master/LICENSE"
 description = ""
-homepage = "http://example.com/"
-tags = []
+homepage = "https://jasonraimondi.com"
+tags = ["blog"]
 features = []
-min_version = "0.41"
+min_version = "0.54"
 
 [author]
   name = "Jason Raimondi"
