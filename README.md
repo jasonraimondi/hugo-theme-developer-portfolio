@@ -7,7 +7,7 @@ This is the hugo theme currently powering https://jasonraimondi.com.
 ```bash
 hugo new site mywebsite
 cd mywebsite
-git submodule add https://github.com/jasonraimondi/hugo-theme-developer-portfolio.git themes/developer-theme
+git submodule add https://github.com/jasonraimondi/hugo-theme-developer-portfolio.git themes/hugo-theme-developer-portfolio
 hugo new my-first-post.md
 ```
 
