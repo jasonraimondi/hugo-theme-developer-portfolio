@@ -4,7 +4,7 @@
         <h1 itemprop="name headline">{{ .Title }}</h1>
         <p class="post-list-date">
             <span itemprop="author" itemscope itemtype="http://schema.org/Person" style="display: none;">
-                <span itemprop="name" style="font-size: 1rem;">Jason Raimondi</span>
+                <span itemprop="name">{{ .Site.Params.Name }}</span>
             </span>
             Published:
             <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
@@ -24,7 +24,7 @@
             {{ with .Param $taxonomyCategory }}
                 {{ range $index, $category := . }}
                     {{ with $.Site.GetPage (printf "/%s/%s" $taxonomyCategory $category) -}}
-                        <li class="label" style="margin-right:3.5px">
+                        <li class="label" style="margin-right:5px">
                             <a href="{{ .Permalink }}">{{ $category | urlize }}</a>
                         </li>
                     {{ end }}
@@ -35,7 +35,7 @@
             {{ with .Param $taxonomyTag }}
                 {{ range $index, $tag := . }}
                     {{ with $.Site.GetPage (printf "/%s/%s" $taxonomyTag $tag) -}}
-                        <li class="label" style="margin-right:3.5px">
+                        <li class="label" style="margin-right:5px">
                             <a href="{{ .Permalink }}">{{ $tag | urlize }}</a>
                         </li>
                     {{ end }}
