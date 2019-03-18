@@ -57,8 +57,8 @@
 
 {{ if .Site.IsServer }}
     {{ $style := resources.Get "css/style.scss" | toCSS }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}" emotion="🤩">
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
 {{ else }}
     {{ $style := resources.Get "css/style.scss" | toCSS | postCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}" emotion="🤩">
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
 {{ end }}
