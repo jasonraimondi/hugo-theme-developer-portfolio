@@ -17,8 +17,9 @@ Copy the configuration file [here](../../config.toml).
 
 ```toml
 baseurl = "https://jasonraimondi.com/"
+baseurl = "/"
 title = "Full Stack Software Engineer"
-theme ="developer-theme"
+theme ="hugo-theme-developer-portfolio"
 languageCode = "en-us"
 enableEmoji = true
 copyright = "© 2019 Jason Raimondi"
@@ -36,9 +37,9 @@ defaultContentLanguage = "en"
   twitter = "jsonmamondi"
   name = "Jason Raimondi"
   email = "jason@raimondi.us"
-  profileURL = "/assets/misc/me/avatar.png"
-  resumePDF = "/assets/resume/JasonRaimondi-Resume-3.2.6.pdf"
-  resumeJSON = "/assets/resume/resume.json"
+  profileURL = "https://placehold.it/150x150"
+  resumePDF = "https://jasonraimondi.com/assets/resume/JasonRaimondi-Resume-3.2.6.pdf"
+  resumeJSON = "https://jasonraimondi.com//assets/resume/resume.json"
   analyticsSnippet = """
 <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
 <script>
