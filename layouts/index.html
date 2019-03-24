@@ -6,7 +6,7 @@
             <h3 class="post-list-title">{{ .Title }}</h3>
         </a>
         <p class="post-list-date">{{ .Date.Format "January 2, 2006" }}</p>
-        <p class="post-list-excerpt">{{ .Description }}</p>
+        <p class="post-list-excerpt">{{ .Description | safeHTML }}</p>
     </li>
     {{ end }}
 </ul>
