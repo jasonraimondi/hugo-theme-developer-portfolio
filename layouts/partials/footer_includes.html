@@ -1,10 +1,10 @@
 {{ $vue := resources.Get "js/lib/vue.min.js" }}
-{{ $vendor := slice $vue | resources.Concat "js/vendor.js" }}
+{{ $vendor := slice $vue | resources.Concat "js/vendor.js" | minify | fingerprint }}
 <script src="{{ $vendor.Permalink | relURL }}"></script>
 
 {{ $components := resources.Get "js/components.js" }}
 {{ $menu := resources.Get "js/menu.js" }}
-{{ $js := slice $menu $components | resources.Concat "js/bundle.js" }}
+{{ $js := slice $menu $components | resources.Concat "js/bundle.js" | minify | fingerprint }}
 <script src="{{ $js.Permalink | relURL }}"></script>
 
 {{ if .Site.IsServer }}
