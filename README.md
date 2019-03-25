@@ -2,6 +2,13 @@
 
 This is the hugo theme currently powering https://jasonraimondi.com.
 
+
+**Features**
+
+* Vue.js in markdown
+* PostCSS with autoprefixer
+* Related posts
+
 ### Getting Started
 
 ```bash
