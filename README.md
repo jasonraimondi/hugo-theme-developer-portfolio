@@ -20,7 +20,7 @@ hugo new my-first-post.md
 
 ### Configuration
 
-Copy the configuration file [here](../../config.toml).
+Copy the configuration file [here](example-site/config.toml).
 
 ```toml
 baseurl = "https://jasonraimondi.com/"
