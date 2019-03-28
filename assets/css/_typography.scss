@@ -48,6 +48,20 @@ h1, h2, h3, h4, h5, h6, p, li {
   margin-top: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: $sans;
+  font-weight: 700;
+}
+
+
+a, p, li, button {
+  font-family: $sans;
+}
+
+code, pre {
+  font-family: $mono;
+}
+
 h1 {
   font-size: 1.5rem;
 }
