@@ -11,6 +11,11 @@
     {{ $description = .Page.Description }}
 {{ end }}
 
+{{ $featuredImage := $profileURL }}
+{{ if .Page.Params.FeaturedImage }}
+    {{ $featuredImage = .Page.Params.FeaturedImage }}
+{{ end }}
+
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +38,7 @@
 <meta property="og:title" content="{{ $title }}" />
 <meta property="og:description" content="{{ $description | truncate 300 }}" />
 <meta property="og:site_name" content="{{ $title }}" />
-<meta property="og:image" content="{{ $profileURL | absURL }}" />
+<meta property="og:image" content="{{ $featuredImage | absURL }}" />
 
 <meta property="fb:app_id" content="000000" />
 
