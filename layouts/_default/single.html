@@ -46,6 +46,12 @@
             {{ .Content }}
         </article>
     </section>
+    {{ if .Params.comments }}
+    <section>
+        <hr>
+        {{ template "_internal/disqus.html" . }}
+    </section>
+    {{ end }}
     {{ if .Params.tags }}
     <footer class="related-posts">
         <hr>
