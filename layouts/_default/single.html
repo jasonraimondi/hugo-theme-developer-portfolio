@@ -46,28 +46,28 @@
             {{ .Content }}
         </article>
     </section>
-    {{ if .Params.comments }}
-    <section>
-        <hr>
-        {{ template "_internal/disqus.html" . }}
-    </section>
-    {{ end }}
-    {{ if .Params.tags }}
-    <footer class="related-posts">
+{{ if .Params.tags }}
+    <section class="related-posts">
         <hr>
         <h4>Related Posts</h4>
         {{ $currentPagePermalink := .Permalink }}
         {{ $tags := .Params.tags }}
         <ul class="list-reset">
-            {{ range .Site.Pages }}
-                {{ $isMatchTags := intersect $tags .Params.tags | len | lt 0 }}
-                {{ if and $isMatchTags (ne .Permalink $currentPagePermalink) }}
-                    <li><a href="{{ .Permalink | absURL }}">{{ .Title }}</a></li>
-                {{ end }}
-            {{ end }}
-        </ul>
-    </footer>
+    {{ range .Site.Pages }}
+        {{ $isMatchTags := intersect $tags .Params.tags | len | lt 0 }}
+        {{ if and $isMatchTags (ne .Permalink $currentPagePermalink) }}
+            <li><a href="{{ .Permalink | absURL }}">{{ .Title }}</a></li>
+        {{ end }}
     {{ end }}
+        </ul>
+    </section>
+{{ end }}
+{{ if .Params.comments }}
+    <section>
+        <hr>
+        {{ template "_internal/disqus.html" . }}
+    </section>
+{{ end }}
 </article>
 
 <script>
