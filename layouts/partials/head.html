@@ -25,7 +25,7 @@
 <meta name="description" content="{{ $description | truncate 160 }}" />
 
 <link rel="canonical" href="{{ .Permalink }}" />
-<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .RSSLink | absURL }}">
+<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink | absURL }}{{ end }}">
 
 <link rel="shortcut icon" href='{{ "/favicon.ico" | absURL}}'>
 <link rel="apple-touch-icon" sizes="180x180" href='{{ "/apple-touch-icon.png" | absURL}}'>
