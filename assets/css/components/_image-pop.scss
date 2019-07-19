@@ -37,10 +37,12 @@
 }
 
 @media #{$large} {
+  .portrait .pops:hover {
+    margin-left: -2%;
+  }
   .pops:hover {
     max-width: 104% !important;
     width: 104% !important;
-    margin-left: -2%;
   }
 }
 
@@ -48,6 +50,8 @@
   .pops:hover {
     max-width: 110% !important;
     width: 110% !important;
+  }
+  .portrait .pops:hover {
     margin-left: -5%;
   }
 }
@@ -56,6 +60,8 @@
   .pops:hover {
     max-width: 114% !important;
     width: 114% !important;
+  }
+  .portrait .pops:hover {
     margin-left: -7%;
   }
 }
