@@ -29,6 +29,10 @@
     margin-bottom: 1rem;
   }
 
+  li > ul {
+    margin-bottom: 0;
+  }
+
   small {
     line-height: 1.2;
   }

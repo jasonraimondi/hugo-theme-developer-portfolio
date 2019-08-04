@@ -48,6 +48,14 @@ h1, h2, h3, h4, h5, h6, p, li {
   margin-top: 0;
 }
 
+li:last-child {
+  margin-bottom: 0;
+}
+
+li > ul {
+  margin-top: 0.5rem;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $sans;
   font-weight: 700;
@@ -110,4 +118,14 @@ h6 {
   h6 {
     font-size: 1rem;
   }
+}
+
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $grey-light;
+  margin: 1em 0;
+  padding: 0;
 }
