@@ -1,0 +1,6 @@
+<video-container
+        {{ if .Get "portrait" }}orientation="portrait"{{ end }}
+        {{ if .Get "mp4" }}mp4="{{ .Get "mp4" }}"{{ end }}
+        {{ if .Get "webm" }}webm="{{ .Get "webm" }}"{{ end }}
+        {{ if .Get "poster" }}poster="{{ .Get "poster" }}"{{ end }}
+></video-container>
