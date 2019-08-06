@@ -43,6 +43,9 @@
             {{ end }}
         </ul>
         <article class="post-body" itemprop="articleBody">
+            {{ if .Params.toc }}
+                {{ .TableOfContents }}
+            {{ end}}
             {{ .Content }}
         </article>
     </section>
