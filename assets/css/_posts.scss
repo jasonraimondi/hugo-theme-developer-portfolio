@@ -25,6 +25,17 @@
     display: block;
   }
 
+  #TableOfContents {
+    > ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
+    li > ul {
+      margin-left: 0;
+    }
+  }
+
   a,
   p,
   ol,
