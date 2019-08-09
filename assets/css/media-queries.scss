@@ -1,0 +1,23 @@
+$screen-xxl: 1501px;
+$screen-xl-max: #{$screen-xxl - 1};
+$screen-xl: 1201px;
+$screen-lg-max: #{$screen-xl - 1};
+$screen-lg: 993px;
+$screen-md-max: #{$screen-lg - 1};
+$screen-md: 769px;
+$screen-sm-max: #{$screen-md - 1};
+$screen-sm: 577px;
+$screen-xs-max: #{$screen-sm - 1};
+$screen-xs: 422px;
+
+@custom-media --xxlarge (min-width: #{$screen-xxl});
+@custom-media --xlarge-only (min-width: #{$screen-xl}) and (max-width: #{$screen-xl-max});
+@custom-media --xlarge (min-width: #{$screen-xl});
+@custom-media --large-only (min-width: #{$screen-lg}) and (max-width: #{$screen-lg-max});
+@custom-media --large (min-width: #{$screen-lg});
+@custom-media --medium-only (min-width: #{$screen-md}) and (max-width: #{$screen-md-max});
+@custom-media --medium (min-width: #{$screen-md});
+@custom-media --small-only (min-width: #{$screen-sm}) and (max-width: #{$screen-sm-max});
+@custom-media --small (min-width: #{$screen-sm});
+@custom-media --xsmall-only (max-width: #{$screen-xs-max});
+@custom-media --xsmall (min-width: #{$screen-xs});

@@ -5,8 +5,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 
+const loadVue = async () => {
+    const Asciinema = Vue.component('asciinema', {
+        name: 'asciinema',
+        props: ['id'],
+        data() {
+            return {
+                source: `https://asciinema.org/a/${this.id}.js`,
+                ascid: `asciicast-${this.id}`
+            }
+        },
+        mounted() {
+            // Can't use script tags directly apparently
+            const asciiscript = document.createElement('script');
+            asciiscript.setAttribute('src', this.source);
+            asciiscript.setAttribute('id', this.ascid);
+            console.log(this.id);
+            document.getElementById(this.id).appendChild(asciiscript)
+        },
+        template: `<figure :id="id"></figure>`
+    });
 
-const loadVue = () => {
     const VideoContainer = Vue.component('video-container', {
         name: 'video-container',
         props: ['mp4', 'webm', 'poster', 'orientation'],
@@ -60,6 +79,7 @@ const loadVue = () => {
     const vm = new Vue({
         el: '#post-content',
         components: {
+            Asciinema,
             VideoContainer,
             ImageGallery,
             ImagePop,

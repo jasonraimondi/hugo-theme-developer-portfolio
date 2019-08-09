@@ -19,13 +19,13 @@
         </p>
     </header>
     <section id="post-content">
-        <ul class="list-reset">
+        <ul id="post-tags-list" class="list-reset">
             {{ $taxonomyCategory := "categories" }}
             {{ with .Param $taxonomyCategory }}
                 {{ range $index, $category := . }}
                     {{ with $.Site.GetPage (printf "/%s/%s" $taxonomyCategory $category) -}}
-                        <li class="label" style="margin-right:5px">
-                            <a href="{{ .Permalink }}">{{ $category | urlize }}</a>
+                        <li style="margin-right:5px">
+                            <a href="{{ .Permalink }}" class="label">{{ $category | urlize }}</a>
                         </li>
                     {{ end }}
                 {{ end }}
@@ -35,8 +35,8 @@
             {{ with .Param $taxonomyTag }}
                 {{ range $index, $tag := . }}
                     {{ with $.Site.GetPage (printf "/%s/%s" $taxonomyTag $tag) -}}
-                        <li class="label" style="margin-right:5px">
-                            <a href="{{ .Permalink }}">{{ $tag | urlize }}</a>
+                        <li style="margin-right:5px">
+                            <a href="{{ .Permalink }}" class="label">{{ $tag | urlize }}</a>
                         </li>
                     {{ end }}
                 {{ end }}

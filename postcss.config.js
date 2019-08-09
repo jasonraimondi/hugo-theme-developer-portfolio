@@ -1,14 +1,17 @@
-const autoprefixer = require('autoprefixer');
-
+const cssPresetEnv = require('postcss-preset-env');
 module.exports = {
     plugins: [
-        autoprefixer({
-            grid: true,
-            browsers: [
-                '>1%',
-                "last 2 versions",
-                "Explorer >= 8",
-            ]
+        cssPresetEnv({
+            stage: 1,
+            features: {
+                'color-mod-function': {
+                    unresolved: 'warn'
+                },
+                'custom-properties': {
+                    preserve: false
+                },
+                'nesting-rules': true
+            }
         }),
     ]
 };

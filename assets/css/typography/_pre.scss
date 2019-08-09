@@ -1,0 +1,27 @@
+pre {
+  color: var(--pre-color);
+  border-radius: var(--pre-border-radius);
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  tab-size: var(--pre-tab-size);
+  hyphens: none;
+  padding: var(--pre-padding);
+
+  margin: var(--pre-margin);
+  overflow: auto;
+  font-family: var(--pre-font-family);
+  font-weight: var(--pre-font-weight);
+  font-size: var(--pre-font-size);
+  font-style: var(--pre-font-style);
+
+  background: var(--pre-background);
+  border: var(--pre-border);
+  @include scrollable;
+
+  & code {
+    font-size: inherit;
+  }
+}

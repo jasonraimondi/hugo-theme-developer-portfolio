@@ -1,15 +1,13 @@
-@import 'variables';
-
 .label {
   display: inline-block;
-  background-color: $green;
-  color: $white;
+  background-color: var(--green);
+  color: var(--white);
   font-size: 0.7rem;
   padding: 2px 4px;
   border-radius: 2px;
 
   a {
-    color: $white;
+    color: var(--white);
   }
 
 
@@ -21,7 +19,7 @@
   a:visited,
   &:hover,
   a:hover {
-    color: $white;
-    background-color: $green-dark;
+    color: var(--white);
+    background-color: var(--green-dark);
   }
 }

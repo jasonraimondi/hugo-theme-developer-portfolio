@@ -1,11 +1,9 @@
-@import "../variables";
-
 /*
 THEME MONOKAI
 https://raw.githubusercontent.com/jwarby/pygments-css/master/monokai.css
 */
-.highlight pre { background-color: $black }
-.highlight .hll { background-color: $black }
+.highlight pre { background-color: var(--black) }
+.highlight .hll { background-color: var(--black) }
 .highlight .c { color: #75715e } /* Comment */
 .highlight .err { color: #960050; background-color: #1e0010 } /* Error */
 .highlight .k { color: #66d9ef } /* Keyword */

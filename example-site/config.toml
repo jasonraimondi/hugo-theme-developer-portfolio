@@ -5,6 +5,8 @@ languageCode = "en-us"
 enableEmoji = true
 copyright = "© 2019 Jason Raimondi"
 
+# disqusShortname = ""
+
 pygmentsCodeFences=true
 pygmentsUseClasses=true
 
@@ -14,13 +16,13 @@ defaultContentLanguage = "en"
   post = "posts/:slug"
 
 [Params]
-  description = "Jason Raimondi is a Full Stack Software Engineer in Los Angeles. My focus has been in web systems, building and deploying server and client web applications. I am a technologist and all around computer geek; give me a computer and I will be hacking in minutes, occupied for days."
+  description = "I am Jason Raimondi, a Full Stack Software Engineer based in Los Angeles. My focus has been in web systems, building and deploying server and client web applications. I am a technologist and all around computer geek; give me a computer and I will be hacking in minutes, and occupied for days."
   twitter = "jsonmamondi"
   name = "Jason Raimondi"
   email = "jason@raimondi.us"
-  profileURL = "https://placehold.it/150x150"
-  resumePDF = "https://jasonraimondi.com/assets/resume/JasonRaimondi-Resume-3.2.6.pdf"
-  resumeJSON = "https://jasonraimondi.com//assets/resume/resume.json"
+  profileURL = "/assets/misc/me/avatar.png"
+  resumePDF = "/assets/resume/JasonRaimondi-Resume-3.2.6.pdf"
+  resumeJSON = "/assets/resume/resume.json"
   analyticsSnippet = """
 <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
 <script>
@@ -32,7 +34,7 @@ defaultContentLanguage = "en"
             m=f.getElementsByTagName('script')[0];
         o.async=1; o.src=t; o.id='fathom-script';
         m.parentNode.insertBefore(o,m)
-    })(document, window, '//analytics.jasonraimondi.com/tracker.js', 'fathom');
+    })(document, window, '//#####.#####.com/tracker.js', 'fathom');
     fathom('set', 'siteId', '####');
     fathom('trackPageview');
 </script>
@@ -46,17 +48,20 @@ defaultContentLanguage = "en"
 [[Params.MainMenu.Link]]
   name = "About"
   url = "/about"
+[[Params.MainMenu.Link]]
+  name = "Uses"
+  url = "/uses"
 
 [Params.ProjectsMenu]
   title = "Projects"
 [[Params.ProjectsMenu.Link]]
   name = "Traverse"
-  url = "/posts/traverse"
+  url = "/posts/traverse-2-electric-boogaloo"
 [[Params.ProjectsMenu.Link]]
   name = "Can I Poop?"
   url = "/posts/can-i-poop"
 [[Params.ProjectsMenu.Link]]
-  name = "Flip"
+  name = "Flipp"
   url = "/posts/flipp"
 
 [Params.ExternalMenu]
@@ -87,6 +92,6 @@ defaultContentLanguage = "en"
     weight = 1
 
 [sitemap]
-  changefreq = "monthly"
+  changefreq = "daily"
   filename = "sitemap.xml"
   priority = 0.5

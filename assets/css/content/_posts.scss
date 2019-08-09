@@ -1,16 +1,17 @@
-@import 'variables';
+.date {
+  color: var(--grey);
+}
 
-//
-//.post-container header h1 {
-//  margin-bottom: 1rem;
-//  font-size: 1.5rem;
-//}
-//
-.date
-  //.post-container time,
-  //.post-container span[itemprop="author"]
-{
-  color: $grey;
+#post-tags-list {
+  display: flex;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    margin: 0;
+  }
 }
 
 #post-content {
@@ -23,17 +24,6 @@
 
   .post-body > a {
     display: block;
-  }
-
-  #TableOfContents {
-    > ul {
-      list-style-type: none;
-      padding-left: 0;
-      margin-left: 0;
-    }
-    li > ul {
-      margin-left: 0;
-    }
   }
 
   a,
@@ -74,15 +64,36 @@
   }
 
   .header-link {
-    color: $green;
+    color: var(--green);
     margin-right: 0.5rem;
 
     &:hover {
-      color: $green-dark;
-      border-bottom: 2px solid $green-dark;
+      color: var(--green-dark);
+      border-bottom: 2px solid var(--green-dark);
+    }
+  }
+
+  #TableOfContents {
+    > ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
+    li > ul {
+      margin-left: 0;
+    }
+  }
+
+  .asciicast  {
+    width: 100%;
+
+    iframe {
+      width: 100%;
     }
   }
 }
+
+
 
 .related-posts {
   margin-top: 3rem;

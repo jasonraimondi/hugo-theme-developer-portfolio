@@ -1,4 +1,1 @@
-<a href="https://asciinema.org/a/{{ .Get "id" }}" target="_blank">
-    <img src="https://asciinema.org/a/{{ .Get "id" }}.svg" />
-    {{ with .Get "description" }}{{ . }}{{end}}
-</a>
+<asciinema id="{{ .Get "id" }}"/></asciinema>

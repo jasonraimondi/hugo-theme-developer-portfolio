@@ -1,6 +1,6 @@
 .sidebar {
-  border-right: 1px solid $grey-light;
-  background-color: $white;
+  border-right: 1px solid var(--grey-light);
+  background-color: var(--white);
 
   .avatar {
     display: block;
@@ -30,11 +30,11 @@
 
   .sidebar-site-name {
     padding-left: 2rem !important;
-    h1 {
+    .h1 {
       margin: 0;
       padding: 0;
       font-size: 1.5rem;
-      color: $black;
+      color: var(--black);
       margin-bottom: 15px;
     }
   }
@@ -43,7 +43,7 @@
 
 .sidebar-toggle-container {
   margin-right: 2rem;
-  border: 1px solid $black;
+  border: 2px solid var(--black);
   border-radius: 5px;
   height: 30px;
   width: 30px;
@@ -52,7 +52,7 @@
   align-items: center;
   padding: 12.5px;
 
-  @media #{$large} {
+  @media (--large) {
     display: none;
   }
 }
@@ -60,5 +60,5 @@
 .sidebar-toggle-icon {
   height: 80%;
   width: 80%;
-  background: $hamburgerMenuIcon;
+  background: var(--menu-icon-url);
 }

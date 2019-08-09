@@ -26,7 +26,7 @@
 
 <ul class="list-reset">
     <li class="sidebar-title">
-        <h6>{{ .Site.Params.ProjectsMenu.Title }}</h6>
+        <h5>{{ .Site.Params.ProjectsMenu.Title }}</h5>
     </li>
     {{ range .Site.Params.ProjectsMenu.Link }}
     <li><a href="{{ .url | absURL }}">{{ .name }}</a></li>

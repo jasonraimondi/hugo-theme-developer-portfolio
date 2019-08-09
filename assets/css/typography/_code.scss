@@ -1,0 +1,19 @@
+.highlight > pre > code {
+  padding: 0;
+  background-color: var(--transparent);
+}
+
+code {
+  font-family: var(--code-font-family);
+  font-weight: var(--code-font-weight);
+  font-size: var(--code-font-size);
+  font-style: var(--code-font-style);
+  color: var(--code-color);
+  line-height: 1.4;
+}
+
+p > code {
+  background-color: var(--code-bg);
+  padding: var(--code-padding);
+  border-radius: var(--border-radius);
+}

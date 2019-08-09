@@ -1,19 +1,17 @@
-@import '../variables';
-
 .image-pop-container {
   margin: 15px auto 30px;
 }
 
 .image-pop-container.portrait {
-  @media #{$large} {
+  @media (--large) {
     margin: 0 15%;
   }
 
-  @media #{$xlarge} {
+  @media (--xlarge) {
     margin: 0 20%;
   }
 
-  @media #{$xxlarge} {
+  @media (--xxlarge) {
     margin: 0 25%;
   }
 }
@@ -26,7 +24,7 @@
 
 .image-pop-title {
   font-style: italic;
-  color: $grey;
+  color: var(--grey);
   font-smooth: always;
 }
 
@@ -36,7 +34,7 @@
   transition: all 200ms;
 }
 
-@media #{$large} {
+@media (--large) {
   .portrait .pops:hover {
     margin-left: -2%;
   }
@@ -46,7 +44,7 @@
   }
 }
 
-@media #{$xlarge} {
+@media (--xlarge) {
   .pops:hover {
     max-width: 110% !important;
     width: 110% !important;
@@ -56,7 +54,7 @@
   }
 }
 
-@media #{$xxlarge} {
+@media (--xxlarge) {
   .pops:hover {
     max-width: 114% !important;
     width: 114% !important;

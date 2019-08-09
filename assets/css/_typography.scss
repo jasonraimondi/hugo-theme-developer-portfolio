@@ -1,131 +1,153 @@
-@import 'variables';
+:root {
+  /**
+   * Headings
+   */
 
-html,
-body {
-  font-size: $base-rem;
-  font-family: $sans;
-  -webkit-font-smoothing: antialiased;
-}
+  --headings-margin: 0 0 0.5em 0;
+  --headings-font-family: inherit;
+  --headings-font-weight: var(--font-weight-semibold);
+  --headings-font-style: normal;
+  --headings-color: inherit;
+  --headings-line-height: var(--line-height-s);
+  --headings-text-transform: none;
+  --headings-letter-spacing: var(--letter-spacing);
 
-a {
-  color: $green;
-  text-decoration: none;
-  &:hover {
-    color: $green-darker;
-  }
-  &:active,
-  &:focus,
-  &:visited {
-    color: $green-dark;
-  }
-}
+  /**
+   * Heading Sizes
+   */
 
-pre {
-  color: $grey-lighter;
-  border-radius: 0.35rem;
-  padding: 1rem;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
+  --h1-font-size: 1.7rem;
+  --h2-font-size: 1.4rem;
+  --h3-font-size: 1.15rem;
+  --h4-font-size: 1.025rem;
+  --h5-font-size: 0.95rem;
+  --h6-font-size: 0.75rem;
 
-code {
-  line-height: 1.4;
-  font-family: $mono;
-  background-color: $black;
-  color: $white;
-  padding: 2px 6px 0;
-  border-radius: 4px;
-  font-weight: lighter;
-}
+  --h1-font-size-large: 2rem;
+  --h2-font-size-large: 1.5rem;
+  --h3-font-size-large: 1.25rem;
+  --h4-font-size-large: 1.125rem;
+  --h5-font-size-large: 1rem;
+  --h6-font-size-large: 0.875rem;
 
-.highlight > pre > code {
-  padding: 0;
-  background-color: transparent;
-}
+  /**
+   * Headings Small
+   */
 
-h1, h2, h3, h4, h5, h6, p, li {
-  margin-bottom: 0.5rem;
-  margin-top: 0;
-}
+  --headings-small-font-family: inherit;
+  --headings-small-font-weight: inherit;
+  --headings-small-font-style: inherit;
+  --headings-small-size: 0.6em;
+  --headings-small-color: inherit;
 
-li:last-child {
-  margin-bottom: 0;
-}
+  /**
+   * Paragraph
+   */
 
-li > ul {
-  margin-top: 0.5rem;
-}
+  --paragraph-margin: 1em 0;
+  --paragraph-font-family: inherit;
+  --paragraph-font-weight: inherit;
+  --paragraph-font-size: var(--font-size-m);
+  --paragraph-font-style: normal;
+  --paragraph-color: inherit;
+  --paragraph-line-height: var(--line-height-m);
+  --paragraph-text-transform: none;
+  --paragraph-letter-spacing: var(--letter-spacing);
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $sans;
-  font-weight: 700;
-}
+  /**
+   * Link
+   */
 
+  --link-color: var(--green);
+  --link-text-decoration: none;
+  --link-text-decoration-skip: objects;
+  --link-hover-color: var(--green-darker);
+  --link-hover-text-decoration: underline;
+  --link-hover-text-decoration-skip: objects;
 
-a, p, li, button {
-  font-family: $sans;
-}
+  /**
+   * Strong
+   */
 
-code, pre {
-  font-family: $mono;
-}
+  --strong-font-family: inherit;
+  --strong-font-weight: var(--font-weight-semibold);
+  --strong-font-style: inherit;
+  --strong-color: inherit;
 
-h1 {
-  font-size: 1.5rem;
-}
+  /**
+   * Horizontal Rule
+   */
 
-h2 {
-  font-size: 1.45rem;
-}
+  --horizontal-rule-margin: var(--space-xxs) auto;
+  --horizontal-rule-height: var(--border-width);
+  --horizontal-rule-background: var(--grey-light);
 
-h3 {
-  font-size: 1.3rem;
-}
+  /**
+   * List
+   */
 
-h4 {
-  font-size: 1.125rem;
-}
+  --list-margin: 1em 0;
+  --list-padding: 0;
+  --list-font-family: var(--paragraph-font-family);
+  --list-font-weight: var(--paragraph-font-weight);
+  --list-font-size: var(--paragraph-font-size);
+  --list-font-style: var(--paragraph-font-style);
+  --list-color: var(--paragraph-color);
+  --list-line-height: var(--paragraph-line-height);
+  --list-text-transform: var(--paragraph-text-transform);
+  --list-letter-spacing: var(--paragraph-letter-spacing);
 
-h5 {
-  font-size: 1.063rem;
-}
+  /**
+   * List Item
+   */
 
-h6 {
-  font-size: 1rem;
-}
+  --list-item-margin: 0.5em 0 0.5em 1.5em;
+  --list-item-padding: 0 0 0 0.5em;
 
-@media #{$large} {
-  h1 {
-    font-size: 2rem;
-  }
+  /**
+   * Child List
+   */
 
-  h2 {
-    font-size: 1.75rem;
-  }
+  --child-list-margin: 0.5em 0 0.5em 0;
+  --child-list-padding: 0;
+  --child-list-item-margin: var(--list-item-margin);
+  --child-list-item-padding: var(--list-item-padding);
 
-  h3 {
-    font-size: 1.55rem;
-  }
+  /**
+   * Unordered List
+   */
 
-  h4 {
-    font-size: 1.4rem;
-  }
+  --unordered-list-icon: disc;
+  --unordered-child-list-icon: disc;
 
-  h5 {
-    font-size: 1.25rem;
-  }
+  /**
+   * Code
+   */
 
-  h6 {
-    font-size: 1rem;
-  }
-}
+  --code-font-family: var(--font-family-mono);
+  --code-font-weight: var(--font-weight-regular);
+  --code-font-size: 80%;
+  --code-font-style: normal;
+  --code-color: var(--primary-background);
 
+  --code-bg: var(--primary-text);
+  --code-padding: 0.2em 0.4em;
 
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid $grey-light;
-  margin: 1em 0;
-  padding: 0;
+  /**
+   * Pre
+   */
+
+  --pre-margin: 1em 0;
+  --pre-padding: 1em;
+  --pre-font-family: var(--code-font-family);
+  --pre-font-weight: normal;
+  --pre-font-size: var(--code-font-size);
+  --pre-font-style: normal;
+  --pre-color: inherit;
+  --pre-tab-size: 4;
+  --pre-hyphens: none;
+  --pre-line-height: var(--line-height-m);
+  --pre-background: inherit;
+  --pre-border: var(--border);
+  --pre-border-radius: var(--border-radius);
 }
