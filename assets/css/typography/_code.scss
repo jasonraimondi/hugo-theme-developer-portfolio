@@ -12,7 +12,9 @@ code {
   line-height: 1.4;
 }
 
-p > code {
+p > code,
+li > code,
+span > code {
   background-color: var(--code-bg);
   padding: var(--code-padding);
   border-radius: var(--border-radius);
