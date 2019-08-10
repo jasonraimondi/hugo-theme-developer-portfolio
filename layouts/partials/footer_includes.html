@@ -1,19 +1,13 @@
-{{ $vue := resources.Get "js/lib/vue.min.js" }}
-{{ $components := resources.Get "js/components.js" }}
 {{ $menu := resources.Get "js/menu.js" }}
 
 <!-- Minify and fingerprint on production build only -->
 {{ if .Site.IsServer }}
-    {{ $vendor := slice $vue | resources.Concat "js/vendor.js" }}
-    {{ $bundle := slice $menu $components | resources.Concat "js/bundle.js" }}
-    <script src="{{ $vendor.Permalink | relURL }}"></script>
+    {{ $bundle := slice $menu | resources.Concat "js/bundle.js" }}
     <script src="{{ $bundle.Permalink | relURL }}"></script>
 
     <script>console.log('Skipping Analytics');</script>
 {{ else }}
-    {{ $vendor := slice $vue | resources.Concat "js/vendor.js" | minify | fingerprint }}
-    {{ $bundle := slice $menu $components | resources.Concat "js/bundle.js" | minify | fingerprint }}
-    <script src="{{ $vendor.Permalink | relURL }}"></script>
+    {{ $bundle := slice $menu | resources.Concat "js/bundle.js" | minify | fingerprint }}
     <script src="{{ $bundle.Permalink | relURL }}"></script>
 
     {{ .Site.Params.AnalyticsSnippet | safeHTML }}

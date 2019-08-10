@@ -2,14 +2,12 @@
 
 This is the hugo theme currently powering https://jasonraimondi.com.
 
-
 **Features**
 
-* Vue.js in markdown
-* PostCSS with autoprefixer
+* PostCSS with postcss-preset-env stage 1
 * Related posts
 
-### Getting Started
+## Getting Started
 
 ```bash
 hugo new site mywebsite
@@ -18,7 +16,88 @@ git submodule add https://github.com/jasonraimondi/hugo-theme-developer-portfoli
 hugo new my-first-post.md
 ```
 
-### Configuration
+## Support for the following components:
+
+### Video Containers
+
+```md
+{{< video/html5 mp4="https://jasonraimondi.com/assets/posts/2017/11/flipp/flipp-mp4.mp4" webm="https://jasonraimondi.com/assets/posts/2017/11/flipp/flipp-webm.webm" poster="https://jasonraimondi.com/assets/posts/2017/11/flipp/flipp-screenshot.png" >}}
+```
+
+outputs 
+
+```html
+<div class="">
+    <video controls="" poster="https://jasonraimondi.com/assets/posts/2017/11/flipp/flipp-screenshot.png">
+        <source src="https://jasonraimondi.com/assets/posts/2017/11/flipp/flipp-mp4.mp4" type="video/mp4">
+        <source src="https://jasonraimondi.com/assets/posts/2017/11/flipp/flipp-webm.webm" type="video/webm">
+        <source src="mp4" type="video/mp4">
+        <source src="webm" type="video/webm">
+        Your browser doesn't support HTML5 video tag.
+    </video>
+</div>
+```
+### Create Image-Pop action
+
+```md
+{{< image/pop src="https://placehold.it/350x350?text=image-1" alt="Image 1" >}}
+```
+
+outputs
+
+```html
+<div class="image-pop-container ">
+    <img src="https://placehold.it/350x350?text=image-1" alt="Image 1" title="Image 1" class="pops">
+    <small class="image-pop-title">Image 1</small>
+</div>
+```
+
+### Create Image Galleries
+
+```md
+{{< image/gallery/frame >}}
+    {{< image/gallery/image src="https://placehold.it/350x350?text=image-1" alt="Image 1" >}}
+    {{< image/gallery/image src="https://placehold.it/350x350?text=image-2" alt="Image 2" >}}
+    {{< image/gallery/image src="https://placehold.it/350x350?text=image-3" alt="Image 3" >}}
+{{< /image/gallery/frame >}}
+```
+
+outputs
+
+```html
+<div class="image-gallery-container">
+    
+    <a class="image-gallery-anchor" href="https://placehold.it/350x350?text=image-1">
+        <img class="image-gallery-image" src="https://placehold.it/350x350?text=image-1" alt="Image 1" title="Image 1">
+        <small class="image-alt-text">Image 1</small>
+    </a>
+
+    <a class="image-gallery-anchor" href="https://placehold.it/350x350?text=image-2">
+        <img class="image-gallery-image" src="https://placehold.it/350x350?text=image-2" alt="Image 2" title="Image 2">
+        <small class="image-alt-text">Image 2</small>
+    </a>
+
+    <a class="image-gallery-anchor" href="3">
+        <img class="image-gallery-image" src="3" alt="Image 3" title="Image 3">
+        <small class="image-alt-text">Image 3</small>
+    </a>
+
+
+</div>
+```
+
+### Support for Asciinema
+
+```
+{{< asciinema id="1hB16TAx2eD0g6sy50XjAELaZ" description="A demonstration of the RESTful API will be working with." >}}
+```
+
+outputs
+
+```html
+<script id="asciicast-1hB16TAx2eD0g6sy50XjAELaZ" src="https://asciinema.org/a/1hB16TAx2eD0g6sy50XjAELaZ.js" async></script>
+```
+## Theme Configuration
 
 Copy the configuration file [here](example-site/config.toml).
 
@@ -118,7 +197,7 @@ defaultContentLanguage = "en"
   priority = 0.5
 ```
 
-## Dockerfile
+## Bundle your site using docker
 
 You can see an example Docker usage in the [example-site](./example-site/Dockerfile).
 

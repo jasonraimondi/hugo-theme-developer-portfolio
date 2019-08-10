@@ -1,0 +1,11 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" -}}
+
+<div class="image-pop-container {{ if .Get "portrait" }}portrait{{ end }}">
+    <img src="{{ $src | safeURL }}"
+         alt="{{ $alt }}"
+         title="{{ $alt }}"
+         class="pops"
+    >
+    <small class="image-pop-title">{{ $alt }}</small>
+</div>

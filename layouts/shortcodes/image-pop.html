@@ -1,5 +1,0 @@
-<image-pop
-        {{ if .Get "portrait" }}portrait="portrait"{{ end }}
-        src='{{ with .Get "src" | safeURL}}{{ . }}{{ end }}'
-        alt='{{ with .Get "alt"}}{{ . }}{{ end }}'
-></image-pop>

@@ -1,0 +1,11 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" -}}
+
+{{- with .Parent -}}
+    <a class="image-gallery-anchor" href="{{ $src }}">
+        <img class="image-gallery-image" src="{{ $src }}" alt="{{ $alt }}" title="{{ $alt }}" />
+        <small class="image-alt-text">{{ $alt }}</small>
+    </a>
+{{- else -}}
+    NOTHING HERE
+{{- end }}
