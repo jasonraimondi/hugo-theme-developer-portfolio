@@ -9,11 +9,11 @@
     {{ with $.Site.Params.ResumePDF }}
     <li>
         <a href="{{ "/resume" | absURL }}" target="_blank">R&eacute;sum&eacute;</a>
-        <a href="{{ . | absURL }}" target="_blank" class="label">
+        <a href="{{ . | absURL }}" target="_blank" class="label inline">
             <span>pdf</span>
         </a>
         {{ with $.Site.Params.ResumeJSON }}
-        <a href="{{ . | absURL }}" target="_blank" class="label">
+        <a href="{{ . | absURL }}" target="_blank" class="label inline">
             <span>json</span>
         </a>
         {{ end }}

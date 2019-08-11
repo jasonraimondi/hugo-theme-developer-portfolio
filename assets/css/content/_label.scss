@@ -1,23 +1,26 @@
 .label {
-  display: inline-block;
   background-color: var(--green);
   color: var(--white);
-  font-size: 0.7rem;
+  font-size: 0.7em;
   padding: 2px 4px;
-  border-radius: 2px;
+  border-radius: var(--border-radius);
 
   a {
     color: var(--white);
+    text-decoration: none;
   }
 
+  &.inline {
+    display: inline-block;
+  }
 
   &:active,
   &:focus,
   &:visited,
+  &:hover,
   a:active,
   a:focus,
   a:visited,
-  &:hover,
   a:hover {
     color: var(--white);
     background-color: var(--green-dark);

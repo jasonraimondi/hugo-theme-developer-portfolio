@@ -11,6 +11,11 @@
   }
   a {
     margin: 0;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
   }
 }
 
