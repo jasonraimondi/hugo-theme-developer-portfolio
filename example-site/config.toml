@@ -20,9 +20,9 @@ defaultContentLanguage = "en"
   twitter = "jsonmamondi"
   name = "Jason Raimondi"
   email = "jason@raimondi.us"
-  profileURL = "/assets/misc/me/avatar.png"
-  resumePDF = "/assets/resume/JasonRaimondi-Resume-3.2.6.pdf"
-  resumeJSON = "/assets/resume/resume.json"
+  profileURL = "https://s3.us-west-1.wasabisys.com/webcdn/misc/me/avatar.png"
+  resumePDF = "https://s3.us-west-1.wasabisys.com/webcdn/resume/JasonRaimondi-Resume-3.2.6.pdf"
+  resumeJSON = "https://s3.us-west-1.wasabisys.com/webcdn/resume/resume.json"
   analyticsSnippet = """
 <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
 <script>

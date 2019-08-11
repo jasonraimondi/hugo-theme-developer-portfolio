@@ -4,7 +4,7 @@
 
 <ul class="list-reset">
     <li class="sidebar-site-name">
-        <p class="h1">{{ .Site.Params.Name }}</p>
+        <h6 class="name">{{ .Site.Params.Name }}</h6>
     </li>
     {{ with $.Site.Params.ResumePDF }}
     <li>
@@ -26,7 +26,7 @@
 
 <ul class="list-reset">
     <li class="sidebar-title">
-        <h5>{{ .Site.Params.ProjectsMenu.Title }}</h5>
+        <h6 class="title">{{ .Site.Params.ProjectsMenu.Title }}</h6>
     </li>
     {{ range .Site.Params.ProjectsMenu.Link }}
     <li><a href="{{ .url | absURL }}">{{ .name }}</a></li>
@@ -35,7 +35,7 @@
 
 <ul class="list-reset">
     <li class="sidebar-title">
-        <h5>{{ .Site.Params.ExternalMenu.Title }}</h5>
+        <h6 class="title">{{ .Site.Params.ExternalMenu.Title }}</h6>
     </li>
     {{ range .Site.Params.ExternalMenu.Link }}
     <li><a href="{{ .url | absURL }}" target="_blank" rel="nofollow">{{ .name }}</a></li>

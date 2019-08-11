@@ -1,0 +1,29 @@
+blockquote {
+  margin: 0;
+  border-left: 2px solid var(--grey);
+
+  & p,
+  & footer {
+    padding-left: 1rem;
+  }
+
+  & p {
+    font-family: inherit;
+    font-weight: var(--font-weight-light);
+    font-size: inherit;
+    font-style: inherit;
+    color: inherit;
+    line-height: inherit;
+    text-transform: inherit;
+    letter-spacing: inherit;
+  }
+
+  & footer {
+    font-size: var(--font-size-sm);
+
+    & strong:after {
+      content: ' —';
+      font-weight: var(--font-weight-light);
+    }
+  }
+}
