@@ -2,7 +2,7 @@
 <ul class="list-reset post-list">
     {{ range .Data.Pages.ByDate.Reverse }}
     <li>
-        <a class="post-list-anchor" href="{{ .Permalink | absURL }}">
+        <a class="post-list-anchor" href="{{ .Permalink | relURL }}">
             <h3 class="post-list-title">{{ .Title }}</h3>
         </a>
         <p class="post-list-date">{{ .Date.Format "January 2, 2006" }}</p>

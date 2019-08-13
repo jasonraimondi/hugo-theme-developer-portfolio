@@ -59,7 +59,7 @@
     {{ range .Site.Pages }}
         {{ $isMatchTags := intersect $tags .Params.tags | len | lt 0 }}
         {{ if and $isMatchTags (ne .Permalink $currentPagePermalink) }}
-            <li><a href="{{ .Permalink | absURL }}">{{ .Title }}</a></li>
+            <li><a href="{{ .Permalink | relURL }}">{{ .Title }}</a></li>
         {{ end }}
     {{ end }}
         </ul>

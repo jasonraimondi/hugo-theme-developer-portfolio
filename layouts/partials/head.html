@@ -25,20 +25,20 @@
 <meta name="description" content="{{ $description | truncate 160 }}" />
 
 <link rel="canonical" href="{{ .Permalink }}" />
-<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink | absURL }}{{ end }}">
+<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink | relURL }}{{ end }}">
 
-<link rel="shortcut icon" href='{{ "/favicon.ico" | absURL}}'>
-<link rel="apple-touch-icon" sizes="180x180" href='{{ "/apple-touch-icon.png" | absURL}}'>
-<link rel="icon" type="image/png" sizes="32x32" href='{{ "/favicon-32x32.png" | absURL}}'>
-<link rel="icon" type="image/png" sizes="16x16" href='{{ "/favicon-16x16.png" | absURL}}'>
-<link rel="manifest" href='{{ "/site.webmanifest" | absURL}}'>
-<link rel="mask-icon" href='{{ "/safari-pinned-tab.svg" | absURL}}' color="#59c270">
+<link rel="shortcut icon" href='{{ "/favicon.ico" | relURL}}'>
+<link rel="apple-touch-icon" sizes="180x180" href='{{ "/apple-touch-icon.png" | relURL}}'>
+<link rel="icon" type="image/png" sizes="32x32" href='{{ "/favicon-32x32.png" | relURL}}'>
+<link rel="icon" type="image/png" sizes="16x16" href='{{ "/favicon-16x16.png" | relURL}}'>
+<link rel="manifest" href='{{ "/site.webmanifest" | relURL}}'>
+<link rel="mask-icon" href='{{ "/safari-pinned-tab.svg" | relURL}}' color="#59c270">
 
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:title" content="{{ $title }}" />
 <meta property="og:description" content="{{ $description | truncate 300 }}" />
 <meta property="og:site_name" content="{{ $title }}" />
-<meta property="og:image" content="{{ $featuredImage | absURL }}" />
+<meta property="og:image" content="{{ $featuredImage | relURL }}" />
 
 <meta property="fb:app_id" content="000000" />
 
@@ -50,7 +50,7 @@
 <meta name="twitter:url" content="{{ .Permalink }}">
 <meta name="twitter:title" content="{{  $title }}">
 <meta name="twitter:description" content="{{ $description | truncate 160 }}">
-<meta name="twitter:image" content="{{ $profileURL | absURL }}">
+<meta name="twitter:image" content="{{ $profileURL | relURL }}">
 
 <style>
     *,
@@ -62,8 +62,8 @@
 
 {{ if .Site.IsServer }}
     {{ $style := resources.Get "css/style.scss" | toCSS | postCSS }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="{{ $style.Permalink | relURL }}">
 {{ else }}
     {{ $style := resources.Get "css/style.scss" | toCSS | postCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="{{ $style.Permalink | relURL }}">
 {{ end }}

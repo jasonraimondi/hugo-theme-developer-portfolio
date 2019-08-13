@@ -8,19 +8,19 @@
     </li>
     {{ with $.Site.Params.ResumePDF }}
     <li>
-        <a href="{{ "/resume" | absURL }}" target="_blank">R&eacute;sum&eacute;</a>
-        <a href="{{ . | absURL }}" target="_blank" class="label inline">
+        <a href="{{ "/resume" | relURL }}" target="_blank">R&eacute;sum&eacute;</a>
+        <a href="{{ . | relURL }}" target="_blank" class="label inline">
             <span>pdf</span>
         </a>
         {{ with $.Site.Params.ResumeJSON }}
-        <a href="{{ . | absURL }}" target="_blank" class="label inline">
+        <a href="{{ . | relURL }}" target="_blank" class="label inline">
             <span>json</span>
         </a>
         {{ end }}
     </li>
     {{ end }}
     {{ range .Site.Params.MainMenu.Link }}
-    <li><a href="{{ .url | absURL }}">{{ .name }}</a></li>
+    <li><a href="{{ .url | relURL }}">{{ .name }}</a></li>
     {{ end }}
 </ul>
 
@@ -29,7 +29,7 @@
         <h6 class="title">{{ .Site.Params.ProjectsMenu.Title }}</h6>
     </li>
     {{ range .Site.Params.ProjectsMenu.Link }}
-    <li><a href="{{ .url | absURL }}">{{ .name }}</a></li>
+    <li><a href="{{ .url | relURL }}">{{ .name }}</a></li>
     {{ end }}
 </ul>
 
@@ -38,6 +38,6 @@
         <h6 class="title">{{ .Site.Params.ExternalMenu.Title }}</h6>
     </li>
     {{ range .Site.Params.ExternalMenu.Link }}
-    <li><a href="{{ .url | absURL }}" target="_blank" rel="nofollow">{{ .name }}</a></li>
+    <li><a href="{{ .url | relURL }}" target="_blank" rel="nofollow">{{ .name }}</a></li>
     {{ end }}
 </ul>
