@@ -7,6 +7,9 @@
         {{ partial "sidebar.html" . }}
     </aside>
     <div class="page-content">
+        <noscript>
+            <p class="noscript">For a better experience, use JavaScript.</p>
+        </noscript>
         <div class="width-constrain">
             {{ partial "mobile-nav.html" . }}
             {{ block "main" . }}

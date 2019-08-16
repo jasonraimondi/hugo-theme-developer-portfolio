@@ -4,6 +4,7 @@
 
 #post-tags-list {
   display: flex;
+  flex-wrap: wrap;
 
   li {
     margin: 0;

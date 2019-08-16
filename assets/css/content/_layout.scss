@@ -1,17 +1,23 @@
-html, body {
-  height: 100%;
-  width: 100%;
+.sidebar-is-open {
+  .main-content {
+    grid-template-columns: var(--sidebar-width) 100%;
+    grid-template-areas: "sidebar content";
+    overflow-x: hidden;
+
+    @media (--medium) {
+      grid-template-columns: var(--sidebar-width) calc(100% - var(--sidebar-width));
+    }
+  }
+
+  .sidebar {
+    display: block;
+  }
 }
 
-body {
-  display: flex;
-  flex-direction: column;
+.main-content {
+  grid-template-columns: 1fr;
+  grid-template-areas: "content";
 }
-
-img {
-  max-width: 100%;
-}
-
 
 .main-content {
   height: 100%;
@@ -20,50 +26,16 @@ img {
   grid-template-areas: "content";
 }
 
-.sidebar {
-  display: none;
-  max-width: var(--sidebar-width);
-  grid-area: sidebar;
-  @include scrollable();
-}
-
 .page-content {
   grid-area: content;
   @include scrollable();
 }
 
-// technically this should be small and medium only, that would fix an issue that appears when you
-// have a small window and open the menu, and then enlarge the browser, the content is off center
-// for now, a refresh is fine...
-.sidebar-is-open {
-  .main-content {
-    grid-template-columns: var(--sidebar-width) 100%;
-    grid-template-areas: "sidebar content";
-    overflow-x: hidden;
-  }
-  .sidebar {
-    display: block;
-  }
-}
-
-@media (--large) {
-  .main-content {
-    grid-template-columns: var(--sidebar-width) 1fr;
-    grid-template-areas: "sidebar content";
-  }
-  .sidebar {
-    display: block;
-  }
-}
 
 .mobile-nav {
-  margin: 2rem 0 1rem;
+  margin: 1.5rem 0 0;
   display: flex;
   align-items: center;
-
-  @media (--large) {
-    display: none;
-  }
 
   h2 {
     margin-bottom: 0;

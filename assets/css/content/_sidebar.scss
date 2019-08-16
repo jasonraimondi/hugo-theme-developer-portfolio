@@ -1,6 +1,11 @@
+
 .sidebar {
+  display: none;
   border-right: 1px solid var(--grey-light);
   background-color: var(--white);
+  max-width: var(--sidebar-width);
+  grid-area: sidebar;
+  @include scrollable();
 
   .avatar {
     display: block;
@@ -15,6 +20,7 @@
 
   ul li {
     padding-left: 2.75rem;
+    margin-top: 0;
     margin-bottom: 0.5rem;
 
     &.sidebar-title {
@@ -51,10 +57,6 @@
   justify-content: center;
   align-items: center;
   padding: 12.5px;
-
-  @media (--large) {
-    display: none;
-  }
 }
 
 .sidebar-toggle-icon {
