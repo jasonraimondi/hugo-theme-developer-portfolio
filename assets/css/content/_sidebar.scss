@@ -1,7 +1,7 @@
 
 .sidebar {
   display: none;
-  border-right: 1px solid var(--grey-light);
+  border-right: 1px solid var(--sidebar-separator-color);
   background-color: var(--white);
   max-width: var(--sidebar-width);
   grid-area: sidebar;

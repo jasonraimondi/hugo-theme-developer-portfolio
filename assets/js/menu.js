@@ -4,7 +4,7 @@ const html = document.querySelector('html');
 
 const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
-if (screenWidth > 993) {
+if (screenWidth > 1049) {
     openSidebar();
 }
 

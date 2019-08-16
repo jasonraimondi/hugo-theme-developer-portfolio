@@ -4,15 +4,18 @@
 
 .image-pop-container.portrait {
   @media (--large) {
-    margin: 0 15%;
+    margin: 0;
+    margin-right: 30%;
   }
 
   @media (--xlarge) {
-    margin: 0 20%;
+    margin: 0;
+    margin-right: 40%;
   }
 
   @media (--xxlarge) {
-    margin: 0 25%;
+    margin: 0;
+    margin-right: 50%;
   }
 }
 
@@ -33,33 +36,36 @@
   width: 100%;
   transition: all 200ms;
 }
-
+//
 @media (--large) {
-  .portrait .pops:hover {
-    margin-left: -2%;
-  }
   .pops:hover {
     max-width: 104% !important;
     width: 104% !important;
+    margin-left: -2%;
+  }
+  .portrait .pops:hover {
+    margin-left: 0;
   }
 }
 
 @media (--xlarge) {
   .pops:hover {
-    max-width: 110% !important;
-    width: 110% !important;
+    max-width: 106% !important;
+    width: 106% !important;
+    margin-left: -3%;
   }
   .portrait .pops:hover {
-    margin-left: -5%;
+    margin-left: 0;
   }
 }
 
 @media (--xxlarge) {
   .pops:hover {
-    max-width: 114% !important;
-    width: 114% !important;
+    max-width: 110% !important;
+    width: 110% !important;
+    margin-left: -5%;
   }
   .portrait .pops:hover {
-    margin-left: -7%;
+    margin-left: 0;
   }
 }
