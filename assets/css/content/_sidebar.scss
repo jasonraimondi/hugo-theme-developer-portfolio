@@ -48,6 +48,7 @@
 
 
 .sidebar-toggle-container {
+  cursor: pointer;
   margin-right: 2rem;
   border: 2px solid var(--black);
   border-radius: 5px;
@@ -56,11 +57,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12.5px;
+  padding: 2px;
 }
 
 .sidebar-toggle-icon {
-  height: 80%;
-  width: 80%;
+  height: 50%;
+  width: 50%;
   background: var(--menu-icon-url);
 }
