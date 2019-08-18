@@ -16,7 +16,7 @@ git submodule add https://github.com/jasonraimondi/hugo-theme-developer-portfoli
 hugo new my-first-post.md
 ```
 
-## Support for the following components:
+## Support for the following [shortcodes](https://gohugo.io/templates/shortcode-templates/):
 
 ### Video Containers
 
