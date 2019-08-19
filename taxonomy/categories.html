@@ -1,6 +1,5 @@
 {{ define "main" }}
 <ul>
-    HI CATEGORY
     {{ range .Data.Pages.ByDate.Reverse }}
     <li><a href="{{ .Permalink}}">{{ .Title }} <small>({{ .Count }})</small></a></li>
     {{ end }}
