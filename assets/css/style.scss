@@ -1,36 +1,40 @@
-@import 'lib/normalize';
-@import 'lib/pygment';
+//@import 'lib/normalize';
+//@import 'lib/pygment';
+//
+//@import 'base';
+//@import 'colors';
+//@import 'typography';
+//@import 'media-queries';
+//
+//@import 'base/root';
+//@import 'base/html';
+//@import 'base/body';
+//@import 'base/noscript';
+//@import 'base/img';
+//@import 'base/width-constraint';
+//
+//@import 'typography/anchor';
+//@import 'typography/code';
+//@import 'typography/blockquote';
+//@import 'typography/headings';
+//@import 'typography/hr';
+//@import 'typography/list';
+//@import 'typography/paragraph';
+//@import 'typography/pre';
+//@import 'typography/strong';
+//
+//@import 'content/elements';
+//@import 'content/label';
+//@import 'content/layout';
+//@import 'content/posts';
+//@import 'content/post-list';
+//@import 'content/resets';
+//@import 'content/sidebar';
+//
+//@import 'components/image-gallery';
+//@import 'components/image-pop';
+//@import 'components/video-container';
 
-@import 'base';
-@import 'colors';
-@import 'typography';
-@import 'media-queries';
-
-@import 'base/root';
-@import 'base/html';
-@import 'base/body';
-@import 'base/noscript';
-@import 'base/img';
-@import 'base/width-constraint';
-
-@import 'typography/anchor';
-@import 'typography/code';
-@import 'typography/blockquote';
-@import 'typography/headings';
-@import 'typography/hr';
-@import 'typography/list';
-@import 'typography/paragraph';
-@import 'typography/pre';
-@import 'typography/strong';
-
-@import 'content/elements';
-@import 'content/label';
-@import 'content/layout';
-@import 'content/posts';
-@import 'content/post-list';
-@import 'content/resets';
-@import 'content/sidebar';
-
-@import 'components/image-gallery';
-@import 'components/image-pop';
-@import 'components/video-container';
+html, body {
+  background-color: tomato !important;
+}

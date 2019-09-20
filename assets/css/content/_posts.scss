@@ -71,11 +71,9 @@
   }
 
   .header-link {
-    color: var(--green);
     margin-right: 0.5rem;
 
     &:hover {
-      color: var(--green-dark);
       border-bottom: 2px solid var(--green-dark);
     }
   }
