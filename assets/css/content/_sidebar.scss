@@ -75,5 +75,14 @@
 .sidebar-toggle-icon {
   height: 50%;
   width: 50%;
-  background: var(--menu-icon-url);
+
+  .menu-icon {
+    color: var(--black);
+    @media (prefers-color-scheme: dark) {
+      color: var(--grey-lighter);
+    }
+    fill: currentColor;
+  }
 }
+
+

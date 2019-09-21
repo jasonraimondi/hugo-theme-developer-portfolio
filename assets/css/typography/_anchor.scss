@@ -1,3 +1,14 @@
+@mixin anchor-hover {
+  text-decoration: underline;
+  text-decoration-skip: objects;
+  text-decoration-skip-ink: auto;
+
+  color: var(--green-darker);
+  @media (prefers-color-scheme: dark) {
+    color: var(--purple-light);
+  }
+}
+
 a {
   text-decoration: none;
   text-decoration-skip: objects;
@@ -11,14 +22,7 @@ a {
 
   &:hover,
   &:focus {
-    text-decoration: underline;
-    text-decoration-skip: objects;
-    text-decoration-skip-ink: auto;
-
-    color: var(--green-darker);
-    @media (prefers-color-scheme: dark) {
-      color: var(--purple-light);
-    }
+    @include anchor-hover;
   }
 
   & > h1,
@@ -33,9 +37,25 @@ a {
   & > .h5,
   & > h6,
   & > .h6 {
-    color: var(--green-darker);
+    color: var(--green);
+
     @media (prefers-color-scheme: dark) {
       color: var(--purple-light);
     }
+  }
+
+  &:hover > h1,
+  &:hover > .h1,
+  &:hover > h2,
+  &:hover > .h2,
+  &:hover > h3,
+  &:hover > .h3,
+  &:hover > h4,
+  &:hover > .h4,
+  &:hover > h5,
+  &:hover > .h5,
+  &:hover > h6,
+  &:hover > .h6 {
+    @include anchor-hover;
   }
 }

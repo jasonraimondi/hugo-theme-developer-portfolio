@@ -27,11 +27,8 @@
 .post-list-date {
   display: block;
   font-size: 80%;
-  color: var(--grey);
+  color: var(--grey-dark);
 
-  @media (prefers-color-scheme: dark) {
-    color: var(--grey-dark);
-  }
   @media (--large) {
     min-width: 200px;
   }

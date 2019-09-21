@@ -21,12 +21,11 @@
 
   &:active,
   &:focus,
-  &:visited,
   &:hover,
   a:active,
   a:focus,
-  a:visited,
   a:hover {
+    text-decoration: none;
     color: var(--white);
     background-color: var(--green-dark);
 
