@@ -2,10 +2,14 @@
 .sidebar {
   display: none;
   border-right: 1px solid var(--sidebar-separator-color);
-  background-color: var(--white);
   max-width: var(--sidebar-width);
   grid-area: sidebar;
   @include scrollable();
+
+  background-color: var(--white);
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--black);
+  }
 
   .avatar {
     display: block;
@@ -42,6 +46,10 @@
       font-size: 1.5rem;
       color: var(--black);
       margin-bottom: 15px;
+
+      @media (prefers-color-scheme: dark) {
+        color: var(--grey-light);
+      }
     }
   }
 }
@@ -58,6 +66,10 @@
   justify-content: center;
   align-items: center;
   padding: 2px;
+
+  @media (prefers-color-scheme: dark) {
+    border-color: var(--white);
+  }
 }
 
 .sidebar-toggle-icon {

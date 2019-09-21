@@ -1,15 +1,41 @@
 a {
-  color: var(--link-color);
-  text-decoration: var(--link-text-decoration);
-  text-decoration-skip: var(--link-text-decoration-skip);
+  text-decoration: none;
+  text-decoration-skip: objects;
   text-decoration-skip-ink: auto;
   transition: color var(--speed-fast) ease-in-out, background var(--speed-fast) ease-in-out, border var(--speed-fast) ease-in-out;
 
+  color: var(--green);
+  @media (prefers-color-scheme: dark) {
+    color: var(--purple);
+  }
+
   &:hover,
   &:focus {
-    color: var(--link-hover-color);
-    text-decoration: var(--link-hover-text-decoration);
-    text-decoration-skip: var(--link-hover-text-decoration-skip);
+    text-decoration: underline;
+    text-decoration-skip: objects;
     text-decoration-skip-ink: auto;
+
+    color: var(--green-darker);
+    @media (prefers-color-scheme: dark) {
+      color: var(--purple-light);
+    }
+  }
+
+  & > h1,
+  & > .h1,
+  & > h2,
+  & > .h2,
+  & > h3,
+  & > .h3,
+  & > h4,
+  & > .h4,
+  & > h5,
+  & > .h5,
+  & > h6,
+  & > .h6 {
+    color: var(--green-darker);
+    @media (prefers-color-scheme: dark) {
+      color: var(--purple-light);
+    }
   }
 }

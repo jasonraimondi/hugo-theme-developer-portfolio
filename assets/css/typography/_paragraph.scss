@@ -1,11 +1,16 @@
 p {
-  margin: var(--paragraph-margin);
-  font-family: var(--paragraph-font-family);
-  font-weight: var(--paragraph-font-weight);
-  font-size: var(--paragraph-font-size);
-  font-style: var(--paragraph-font-style);
-  color: var(--paragraph-color);
-  line-height: var(--paragraph-line-height);
-  text-transform: var(--paragraph-text-transform);
-  letter-spacing: var(--paragraph-letter-spacing);
+  margin: 1em 0;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: var(--font-size-md);
+  font-style: normal;
+  line-height: var(--line-height-m);
+  text-transform: none;
+  letter-spacing: var(--letter-spacing);
+
+  color: var(--black);
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--grey-light);
+  }
 }

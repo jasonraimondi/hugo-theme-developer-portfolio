@@ -6,10 +6,14 @@ ol {
   font-weight: var(--list-font-weight);
   font-size: var(--list-font-size);
   font-style: var(--list-font-style);
-  color: var(--list-color);
   line-height: var(--list-line-height);
   text-transform: var(--list-text-transform);
   letter-spacing: var(--list-letter-spacing);
+
+  color: var(--black);
+  @media (prefers-color-scheme: dark) {
+    color: var(--grey-light);
+  }
 
   & li {
     margin: var(--list-item-margin);

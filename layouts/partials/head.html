@@ -58,16 +58,10 @@
     *::after {
         box-sizing: inherit;
     }
-    html, .sidebar {
-        background-color: #22292f !important;
-    }
-    h1, h2, h3, h4, h5, h6, p, ol, li {
-        color: #f5f5f5 !important;
-    }
 </style>
 
 {{ if .Site.IsServer }}
-    {{ $style := resources.Get "css/style.scss" | toCSS | postCSS | minify | fingerprint }}
+    {{ $style := resources.Get "css/style.scss" | toCSS | postCSS }}
     <link rel="stylesheet" href="{{ $style.Permalink | relURL }}">
 {{ else }}
     {{ $style := resources.Get "css/style.scss" | toCSS | postCSS | minify | fingerprint }}

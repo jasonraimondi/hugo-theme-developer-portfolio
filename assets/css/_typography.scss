@@ -40,39 +40,6 @@
   --headings-small-size: 0.6em;
   --headings-small-color: inherit;
 
-  /**
-   * Paragraph
-   */
-
-  --paragraph-margin: 1em 0;
-  --paragraph-font-family: inherit;
-  --paragraph-font-weight: inherit;
-  --paragraph-font-size: var(--font-size-md);
-  --paragraph-font-style: normal;
-  --paragraph-color: inherit;
-  --paragraph-line-height: var(--line-height-m);
-  --paragraph-text-transform: none;
-  --paragraph-letter-spacing: var(--letter-spacing);
-
-  /**
-   * Link
-   */
-
-  --link-color: var(--green);
-  --link-text-decoration: none;
-  --link-text-decoration-skip: objects;
-  --link-hover-color: var(--green-darker);
-  --link-hover-text-decoration: underline;
-  --link-hover-text-decoration-skip: objects;
-
-  /**
-   * Strong
-   */
-
-  --strong-font-family: inherit;
-  --strong-font-weight: var(--font-weight-semibold);
-  --strong-font-style: inherit;
-  --strong-color: inherit;
 
   /**
    * Horizontal Rule
@@ -92,7 +59,6 @@
   --list-font-weight: var(--paragraph-font-weight);
   --list-font-size: var(--paragraph-font-size);
   --list-font-style: var(--paragraph-font-style);
-  --list-color: var(--paragraph-color);
   --list-line-height: var(--paragraph-line-height);
   --list-text-transform: var(--paragraph-text-transform);
   --list-letter-spacing: var(--paragraph-letter-spacing);
