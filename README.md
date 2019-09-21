@@ -220,3 +220,21 @@ FROM nginx:alpine
 COPY ./nginx /etc/nginx/
 COPY --chown=nginx:nginx --from=builder /dist/ /app/
 ```
+
+iOS Safari Light
+![Screenshot](.images/theme-screenshots-1.png)
+
+iOS Safari Dark
+![Screenshot](.images/theme-screenshots-2.png)
+
+Firefox Light
+![Screenshot](.images/theme-screenshots-3.png)
+
+Firefox Dark
+![Screenshot](.images/theme-screenshots-4.png)
+
+Safari Light
+![Screenshot](.images/theme-screenshots-5.png)
+
+Safari dark
+![Screenshot](.images/theme-screenshots-6.png)
