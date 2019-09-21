@@ -6,7 +6,7 @@
   border-radius: var(--border-radius);
 
   @media (prefers-color-scheme: dark) {
-    color: var(--black);
+    color: var(--white);
     background-color: var(--purple-dark);
   }
 
@@ -31,7 +31,7 @@
     background-color: var(--green-dark);
 
     @media (prefers-color-scheme: dark) {
-      color: var(--black);
+      color: var(--white);
       background-color: var(--purple-light);
     }
   }
