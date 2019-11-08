@@ -1,8 +1,8 @@
 # Hugo Theme
 
-This is the hugo theme currently powering https://jasonraimondi.com.
+This is the hugo theme currently powering <https://jasonraimondi.com.>
 
-**Features**
+## Features
 
 * PostCSS with postcss-preset-env stage 1
 * Related posts
@@ -16,15 +16,15 @@ git submodule add https://github.com/jasonraimondi/hugo-theme-developer-portfoli
 hugo new my-first-post.md
 ```
 
-## Support for the following [shortcodes](https://gohugo.io/templates/shortcode-templates/):
+## Support for the following [shortcodes](https://gohugo.io/templates/shortcode-templates/)
 
-### Video Containers
+1) Video Containers
 
 ```md
 {{< video/html5 mp4="https://jasonraimondi.com/assets/posts/2017/11/flipp/flipp-mp4.mp4" webm="https://jasonraimondi.com/assets/posts/2017/11/flipp/flipp-webm.webm" poster="https://jasonraimondi.com/assets/posts/2017/11/flipp/flipp-screenshot.png" >}}
 ```
 
-outputs 
+Outputs to the following.
 
 ```html
 <div class="">
@@ -37,13 +37,14 @@ outputs
     </video>
 </div>
 ```
+
 ### Create Image-Pop action
 
 ```md
 {{< image/pop src="https://placehold.it/350x350?text=image-1" alt="Image 1" >}}
 ```
 
-outputs
+Outputs to the following.
 
 ```html
 <div class="image-pop-container ">
@@ -62,11 +63,10 @@ outputs
 {{< /image/gallery/frame >}}
 ```
 
-outputs
+Outputs to the following.
 
 ```html
 <div class="image-gallery-container">
-    
     <a class="image-gallery-anchor" href="https://placehold.it/350x350?text=image-1">
         <img class="image-gallery-image" src="https://placehold.it/350x350?text=image-1" alt="Image 1" title="Image 1">
         <small class="image-alt-text">Image 1</small>
@@ -88,16 +88,17 @@ outputs
 
 ### Support for Asciinema
 
-```
+```md
 {{< asciinema id="1hB16TAx2eD0g6sy50XjAELaZ" description="A demonstration of the RESTful API will be working with." >}}
 ```
 
-outputs
+Outputs to the following.
 
 ```html
 <script id="asciicast-1hB16TAx2eD0g6sy50XjAELaZ" src="https://asciinema.org/a/1hB16TAx2eD0g6sy50XjAELaZ.js" async></script>
 ```
-## Theme Configuration
+
+## Theme configuration
 
 Copy the configuration file [here](example-site/config.toml).
 

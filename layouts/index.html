@@ -1,6 +1,6 @@
 {{ define "main" }}
 <ul class="list-reset post-list">
-    {{ range .Data.Pages.ByDate.Reverse }}
+    {{ range .Paginator.Pages.ByDate.Reverse }}
     <li>
         <a class="post-list-anchor" href="{{ .Permalink | relURL }}">
             <h3 class="post-list-title">{{ .Title }}</h3>
@@ -10,5 +10,9 @@
     </li>
     {{ end }}
 </ul>
-{{ end }}
 
+<div class="paginator">
+    {{ partial "pagination.html" . }}
+</div>
+
+{{ end }}

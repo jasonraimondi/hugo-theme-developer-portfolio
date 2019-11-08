@@ -2,9 +2,12 @@
     <img src="{{ .Site.Params.ProfileURL }}" alt="{{ .Site.Params.Name }}'s Profile Picture" />
 </a>
 
+
 <ul class="list-reset">
     <li class="sidebar-site-name">
         <h6 class="name">{{ .Site.Params.Name }}</h6>
+        {{ $twitter := .Site.Params.Twitter }}
+        <a class="twitter" href="//twitter.com/{{ $twitter }}">@{{ $twitter }}</a>
     </li>
     {{ with $.Site.Params.ResumePDF }}
     <li>
