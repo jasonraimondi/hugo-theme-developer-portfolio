@@ -116,6 +116,8 @@ pygmentsUseClasses=true
 
 defaultContentLanguage = "en"
 
+pagination = 20
+
 [Permalinks]
   post = "posts/:slug"
 
