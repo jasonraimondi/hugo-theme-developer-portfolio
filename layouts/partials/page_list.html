@@ -1,0 +1,18 @@
+<li>
+  <a class="post-list-anchor" href="{{ .Permalink | relURL }}">
+    {{ with .Params.Image }}<img src="{{ . }}" style="width: 100%" />{{ end }}
+    <h3 class="post-list-title">{{ .Title }}</h3>
+  </a>
+  <p class="post-list-date">
+    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+    {{ .Date.Format "January 2, 2006" }}
+    </time>
+    {{ if ne .Date .Page.Lastmod }}
+    | Last Modified:
+    <time datetime="{{ .Page.Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+    {{ .Page.Lastmod.Format "January 2, 2006" }}
+    </time>
+    {{ end }}
+  </p>
+  <p class="post-list-excerpt">{{ .Description | safeHTML }}</p>
+</li>

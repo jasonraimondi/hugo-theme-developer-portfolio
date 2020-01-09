@@ -21,3 +21,12 @@ span > code {
   padding: var(--code-padding);
   border-radius: var(--border-radius);
 }
+
+h1, h2, h3, h4, h5 {
+  & > code {
+    color: var(--black);
+    background-color: var(--grey-light);
+    padding: 1px 2px;
+    border-radius: var(--border-radius);
+  }
+}

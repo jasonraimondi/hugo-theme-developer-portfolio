@@ -11,19 +11,19 @@ I am a huge fan
 
 ## Video Containers
 
-{{< video/html5 mp4="https://jasonraimondi.com/assets/posts/2017/11/flipp/flipp-mp4.mp4" webm="https://jasonraimondi.com/assets/posts/2017/11/flipp/flipp-webm.webm" poster="https://jasonraimondi.com/assets/posts/2017/11/flipp/flipp-screenshot.png" >}}
+{{< video/html5 mp4="https://d265ybhz09ikd5.cloudfront.net/posts/2017/11/flipp/flipp-mp4.mp4" webm="https://d265ybhz09ikd5.cloudfront.net/posts/2017/11/flipp/flipp-webm.webm" poster="https://d265ybhz09ikd5.cloudfront.net/posts/2017/11/flipp/flipp-screenshot.png" >}}
 
 ## Create Image-Pop action
 
 
-{{< image/pop src="https://placehold.it/350x350?text=image-1" alt="Image 1" >}}
+{{< image/pop src="https://d265ybhz09ikd5.cloudfront.net/posts/_covers/andrew-ly-zjU1dRlB4HM-unsplash.jpg" alt="Image 1" >}}
 
 ## Create Image Galleries
 
 {{< image/gallery/frame >}}
-    {{< image/gallery/image src="https://placehold.it/350x350?text=image-1" alt="Image 1" >}}
-    {{< image/gallery/image src="https://placehold.it/350x350?text=image-2" alt="Image 2" >}}
-    {{< image/gallery/image src="https://placehold.it/350x350?text=image-3" alt="Image 3" >}}
+    {{< image/gallery/image src="https://d265ybhz09ikd5.cloudfront.net/posts/_covers/andrew-ly-zjU1dRlB4HM-unsplash.jpg" alt="Image 1" >}}
+    {{< image/gallery/image src="https://d265ybhz09ikd5.cloudfront.net/posts/_covers/andrew-ly-zjU1dRlB4HM-unsplash.jpg" alt="Image 2" >}}
+    {{< image/gallery/image src="https://d265ybhz09ikd5.cloudfront.net/posts/_covers/andrew-ly-zjU1dRlB4HM-unsplash.jpg" alt="Image 3" >}}
 {{< /image/gallery/frame >}}
 
 ## Support for Asciinema

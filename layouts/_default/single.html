@@ -1,6 +1,7 @@
 {{ define "main" }}
 <article class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
+        {{ with .Params.Image }}<img id="js-feature-image" src="{{ . }}" style="width: 100%"/>{{ end }}
         <h1 itemprop="name headline">{{ .Title }}</h1>
         <p class="post-list-date">
             <span itemprop="author" itemscope itemtype="http://schema.org/Person" style="display: none;">

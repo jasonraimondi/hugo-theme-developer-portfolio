@@ -1,13 +1,7 @@
 {{ define "main" }}
 <ul class="list-reset post-list">
     {{ range .Data.Pages.ByDate.Reverse }}
-    <li>
-        <a class="post-list-anchor" href="{{ .Permalink | relURL }}">
-            <h3 class="post-list-title">{{ .Title }}</h3>
-        </a>
-        <p class="post-list-date">{{ .Date.Format "January 2, 2006" }}</p>
-        <p class="post-list-excerpt">{{ .Description | safeHTML }}</p>
-    </li>
+        {{ partial "page_list.html" . }}
     {{ end }}
 </ul>
 {{ end }}
