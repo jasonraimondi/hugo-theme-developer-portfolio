@@ -2,7 +2,7 @@
   "name": "jasontheme",
   "license": "MIT",
   "dependencies": {
-    "postcss-cli": "^6.1.2",
+    "postcss-cli": "^6.1.3",
     "postcss-preset-env": "^6.7.0"
   },
   "browserslist": [
