@@ -20,6 +20,20 @@
   }
 }
 
+.image-credit {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  a {
+    font-size: 0.7rem;
+    color: var(--grey-dark);
+    &:hover {
+      color: var(--grey-darkest);
+      text-decoration: none;
+    }
+  }
+}
+
 #post-content {
   height: 100%;
   width: 100%;

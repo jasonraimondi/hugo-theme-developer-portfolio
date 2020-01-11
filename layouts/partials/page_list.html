@@ -1,6 +1,8 @@
 <li>
   <a class="post-list-anchor" href="{{ .Permalink | relURL }}">
-    {{ with .Params.Image }}<img src="{{ . }}" style="width: 100%" />{{ end }}
+    {{ if isset .Params "image" }}
+    <img id="js-feature-image" src="{{ .Params.Image }}" style="width: 100%" alt="{{ .Params.ImageAlt }}" title="{{ .Params.ImageCredit }}" />
+    {{ end }}
     <h3 class="post-list-title">{{ .Title }}</h3>
   </a>
   <p class="post-list-date">

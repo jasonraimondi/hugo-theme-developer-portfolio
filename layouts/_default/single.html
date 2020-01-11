@@ -1,7 +1,8 @@
 {{ define "main" }}
+
 <article class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
-        {{ with .Params.Image }}<img id="js-feature-image" src="{{ . }}" style="width: 100%"/>{{ end }}
+        {{ partial "image.html" . }}
         <h1 itemprop="name headline">{{ .Title }}</h1>
         <p class="post-list-date">
             <span itemprop="author" itemscope itemtype="http://schema.org/Person" style="display: none;">
@@ -94,7 +95,25 @@
                 header.insertBefore(anchor, header.firstChild);
             }
         }
-    };
-    addHeaderDeepLinks();
+    }();
+    const updateCreditWithLink = function() {
+        const credit = document.getElementById("js-feature-image-credit");
+        const [username, url] = credit.innerText.split(" ");
+
+        const $username = document.createElement("a");
+        $username.href = "https://unsplash.com/" + username;
+        $username.innerHTML = username;
+        $username.target = "_blank";
+
+        const $url = document.createElement("a");
+        $url.href = url;
+        $url.innerHTML = url;
+        $url.target = "_blank";
+
+        credit.innerHTML = "";
+        credit.insertBefore($url, credit.firstChild);
+        credit.insertBefore(document.createTextNode(" "), credit.firstChild);
+        credit.insertBefore($username, credit.firstChild);
+    }();
 </script>
 {{ end }}

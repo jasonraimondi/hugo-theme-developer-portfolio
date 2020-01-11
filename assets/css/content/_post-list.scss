@@ -3,20 +3,26 @@
     padding-bottom: 0.5em;
     border-bottom: var(--border);
     margin-bottom: 1em;
+
     &:last-child {
       margin-bottom: 0;
       border-bottom: 0;
     }
   }
+
   p {
     margin: 0;
     margin-bottom: 0.5em;
   }
+
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 .post-list-anchor {
-  &:hover {
-    text-decoration: underline;
+  small {
+    color: var(--grey);
   }
 }
 
@@ -35,6 +41,7 @@
     min-width: 200px;
   }
 }
+
 //
 //.post-list-excerpt {
 //  color: var(--black);
