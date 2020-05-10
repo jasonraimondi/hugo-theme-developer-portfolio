@@ -22,9 +22,9 @@ pagination = 20
   twitter = "jsonmamondi"
   name = "Jason Raimondi"
   email = "jason@raimondi.us"
-  profileURL = "https://d265ybhz09ikd5.cloudfront.net/misc/me/avatar.png"
-  resumePDF = "https://d265ybhz09ikd5.cloudfront.net/resume/JasonRaimondi-Resume-3.2.6.pdf"
-  resumeJSON = "https://d265ybhz09ikd5.cloudfront.net/resume/resume.json"
+  profileURL = "https://assets.jasonraimondi.com/misc/me/avatar.png"
+  resumePDF = "https://assets.jasonraimondi.com/resume/JasonRaimondi-Resume-3.2.6.pdf"
+  resumeJSON = "https://assets.jasonraimondi.com/resume/resume.json"
   analyticsSnippet = """
 <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
 <script>
