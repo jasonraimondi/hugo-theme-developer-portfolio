@@ -75,6 +75,12 @@
 {{ end }}
 </article>
 
+{{ with $.Site.Params.EditLink }}
+<p style="text-align: center">
+    <small>Feel free to make any fixes at <a href="{{ .Link }}">{{ .Name }}</a></small>
+</p>
+{{ end }}
+
 <script>
     const addHeaderDeepLinks = function() {
         const postDoc = document.getElementById('post-content');
