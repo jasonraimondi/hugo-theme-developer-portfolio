@@ -4,11 +4,14 @@
 
 
 <ul class="list-reset">
-    <li class="sidebar-site-name">
+    <!-- <li class="sidebar-site-name">
         <h6 class="name">{{ .Site.Params.Name }}</h6>
         {{ $twitter := .Site.Params.Twitter }}
         <a class="twitter" href="//twitter.com/{{ $twitter }}">@{{ $twitter }}</a>
-    </li>
+    </li> -->
+    {{ range .Site.Params.MainMenu.Link }}
+    <li><a href="{{ .url | relURL }}">{{ .name }}</a></li>
+    {{ end }}
     {{ with $.Site.Params.ResumePDF }}
     <li>
         <a href="{{ "/resume" | relURL }}" target="_blank">R&eacute;sum&eacute;</a>
@@ -21,9 +24,6 @@
         </a>
         {{ end }}
     </li>
-    {{ end }}
-    {{ range .Site.Params.MainMenu.Link }}
-    <li><a href="{{ .url | relURL }}">{{ .name }}</a></li>
     {{ end }}
 </ul>
 
