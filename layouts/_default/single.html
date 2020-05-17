@@ -1,5 +1,4 @@
 {{ define "main" }}
-
 <article class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
         {{ partial "image.html" . }}
@@ -77,7 +76,7 @@
 
 {{ with $.Site.Params.EditLink }}
 <p style="text-align: center">
-    <small>Feel free to make any fixes at <a href="{{ .Link }}">{{ .Name }}</a></small>
+    <small>Feel free to make any fixes on <a href="{{ .Link }}">{{ .Name }}</a></small>
 </p>
 {{ end }}
 
@@ -101,25 +100,27 @@
                 header.insertBefore(anchor, header.firstChild);
             }
         }
-    }();
-    const updateCreditWithLink = function() {
-        const credit = document.getElementById("js-feature-image-credit");
-        const [username, url] = credit.innerText.split(" ");
+    };
+    const updateCreditWithLink = function () {
+        const credit = document.getElementById('js-feature-image-credit');
+        const [username, url] = credit.innerText.split(' ');
 
-        const $username = document.createElement("a");
-        $username.href = "https://unsplash.com/" + username;
+        const $username = document.createElement('a');
+        $username.href = 'https://unsplash.com/' + username;
         $username.innerHTML = username;
-        $username.target = "_blank";
+        $username.target = '_blank';
 
-        const $url = document.createElement("a");
+        const $url = document.createElement('a');
         $url.href = url;
         $url.innerHTML = url;
-        $url.target = "_blank";
+        $url.target = '_blank';
 
-        credit.innerHTML = "";
+        credit.innerHTML = '';
         credit.insertBefore($url, credit.firstChild);
-        credit.insertBefore(document.createTextNode(" "), credit.firstChild);
+        credit.insertBefore(document.createTextNode(' '), credit.firstChild);
         credit.insertBefore($username, credit.firstChild);
-    }();
+    };
+    addHeaderDeepLinks();
+    updateCreditWithLink();
 </script>
 {{ end }}

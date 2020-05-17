@@ -2,24 +2,43 @@
 <html>
 {{ partial "head.html" . }}
 <body>
+<noscript>
+    <p class="noscript">Things would be a lot easier if you just enabled JavaScript.</p>
+</noscript>
 <main class="main-content">
-    <aside class="sidebar">
-        {{ partial "sidebar.html" . }}
-    </aside>
-    <aside class="menu-toggle">
-        <p class="close">&#8810;</p>
-        <p class="open">&#8811;</p>
-    </aside>
-    <div class="page-content">
-        <noscript>
-            <p class="noscript">Things would be a lot easier if you just enabled JavaScript.</p>
-        </noscript>
-        <div class="width-constrain">
-            {{ partial "mobile-nav.html" . }}
-            {{ block "main" . }}
+
+    <nav class="main-nav">
+        <a class="avatar" href="/">
+            <img src="{{ .Site.Params.ProfileURL }}" alt="{{ .Site.Params.Name }}'s Profile Picture" />
+        </a>
+
+        <ul class="list-reset">
+        <!-- <li class="sidebar-site-name">
+            <h6 class="name">{{ .Site.Params.Name }}</h6>
+            {{ $twitter := .Site.Params.Twitter }}
+            <a class="twitter" href="//twitter.com/{{ $twitter }}">@{{ $twitter }}</a>
+        </li> -->
+        {{ range .Site.Params.MainMenu.Link }}
+        <li><a href="{{ .url | relURL }}">{{ .name }}</a></li>
+        {{ end }}
+        {{ with $.Site.Params.ResumePDF }}
+        <li>
+            <a href="{{ "/resume" | relURL }}" target="_blank">R&eacute;sum&eacute;</a>
+            <a href="{{ . | relURL }}" target="_blank" class="label inline">
+                <span>pdf</span>
+            </a>
+            {{ with $.Site.Params.ResumeJSON }}
+            <a href="{{ . | relURL }}" target="_blank" class="label inline">
+                <span>json</span>
+            </a>
             {{ end }}
-        </div>
-    </div>
+        </li>
+        {{ end }}
+    </ul>
+    </nav>
+
+    {{ block "main" . }}
+    {{ end }}
 </main>
 {{ partial "footer_includes.html" . }}
 {{ partial "footer_extras.html" . }}
