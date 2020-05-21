@@ -17,7 +17,7 @@ h5,
 h6,
 .h6 {
   margin: var(--headings-margin);
-  font-family: var(--headings-font-family);
+  font-family: inherit;
   font-weight: var(--headings-font-weight);
   font-style: var(--headings-font-style);
   color: var(--black);

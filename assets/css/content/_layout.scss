@@ -23,19 +23,45 @@
 //  }
 //}
 
+.home p {
+  margin: 0;
+  margin-top: 0.5rem;
+}
+
 .main-nav {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
 
-  .avatar  {
+  .main-nav-title {
+    letter-spacing: -0.25px;
+    margin: 0;
+    margin-left: 1rem;
+
+    a {
+      color: var(--black);
+
+      @media (prefers-color-scheme: dark) {
+        color: var(--grey);
+      }
+    }
+  }
+
+  .label {
+    position: relative;
+    top: -2px;
+  }
+
+  .avatar {
     display: block;
+
     img {
       height: 50px;
       width: 50px;
       border-radius: 13px;
     }
+
     height: 50px;
   }
 
@@ -45,6 +71,7 @@
     height: 100%;
     margin: 0;
     margin-left: 1rem;
+    text-transform: uppercase;
 
     li {
       align-self: center;

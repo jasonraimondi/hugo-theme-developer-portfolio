@@ -12,7 +12,11 @@
             <img src="{{ .Site.Params.ProfileURL }}" alt="{{ .Site.Params.Name }}'s Profile Picture" />
         </a>
 
-        <ul class="list-reset">
+        <h2 class="main-nav-title h3">
+            <a href="/">JASONRAIMONDI.COM</a>
+        </h2>
+
+        <ul class="list-reset" >
         <!-- <li class="sidebar-site-name">
             <h6 class="name">{{ .Site.Params.Name }}</h6>
             {{ $twitter := .Site.Params.Twitter }}
@@ -23,7 +27,7 @@
         {{ end }}
         {{ with $.Site.Params.ResumePDF }}
         <li>
-            <a href="{{ "/resume" | relURL }}" target="_blank">R&eacute;sum&eacute;</a>
+            <a href="{{ "/resume" | relURL }}">Resume</a>
             <a href="{{ . | relURL }}" target="_blank" class="label inline">
                 <span>pdf</span>
             </a>

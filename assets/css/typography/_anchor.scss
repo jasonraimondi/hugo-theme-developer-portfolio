@@ -1,9 +1,9 @@
 @mixin anchor-hover {
-  text-decoration: underline;
+  //text-decoration: underline;
   text-decoration-skip: objects;
   text-decoration-skip-ink: auto;
 
-  color: var(--green-dark);
+  color: var(--green-darker);
   @media (prefers-color-scheme: dark) {
     color: var(--purple-light);
   }
