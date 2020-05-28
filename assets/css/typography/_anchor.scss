@@ -20,6 +20,8 @@ a {
     color: var(--purple);
   }
 
+  font-weight: var(--font-weight-semibold);
+
   &:hover,
   &:focus {
     @include anchor-hover;

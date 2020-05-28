@@ -18,16 +18,22 @@ pagination = 20
   post = "posts/:slug"
 
 [Params]
+  title = "jasonraimondi.com"
   description = "I am Jason Raimondi, a Full Stack Software Engineer based in Los Angeles. My focus has been in web systems, building and deploying server and client web applications. I am a technologist and all around computer geek; give me a computer and I will be hacking in minutes, and occupied for days."
   twitter = "jsonmamondi"
   name = "Jason Raimondi"
   email = "jason@raimondi.us"
-  profileURL = "https://assets.jasonraimondi.com/misc/me/avatar.png"
   resumePDF = "https://assets.jasonraimondi.com/resume/JasonRaimondi-Resume-3.2.6.pdf"
   resumeJSON = "https://assets.jasonraimondi.com/resume/resume.json"
   analyticsSnippet = """
 <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
 """
+
+[Params.ProfileURL]
+  smallJPG = "https://assets.jasonraimondi.com/misc/me/avatar.jpg"
+  smallWEBP = "https://assets.jasonraimondi.com/misc/me/avatar.webp"
+  largeJPG = "https://assets.jasonraimondi.com/misc/me/avatar@2x.jpg"
+  largeWEBP = "https://assets.jasonraimondi.com/misc/me/avatar@2x.webp"
 
 [Params.MainMenu]
   title = "Projects"

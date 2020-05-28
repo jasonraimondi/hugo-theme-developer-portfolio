@@ -12,33 +12,35 @@
             <img src="{{ .Site.Params.ProfileURL }}" alt="{{ .Site.Params.Name }}'s Profile Picture" />
         </a>
 
-        <h2 class="main-nav-title h3">
-            <a href="/">JASONRAIMONDI.COM</a>
+        {{ if not .IsHome }}
+        <h2 class="nav-title">
+            <a href="/">{{ .Site.Params.Title }}</a>
         </h2>
+        {{ end }}
 
-        <ul class="list-reset" >
-        <!-- <li class="sidebar-site-name">
-            <h6 class="name">{{ .Site.Params.Name }}</h6>
-            {{ $twitter := .Site.Params.Twitter }}
-            <a class="twitter" href="//twitter.com/{{ $twitter }}">@{{ $twitter }}</a>
-        </li> -->
-        {{ range .Site.Params.MainMenu.Link }}
-        <li><a href="{{ .url | relURL }}">{{ .name }}</a></li>
-        {{ end }}
-        {{ with $.Site.Params.ResumePDF }}
-        <li>
-            <a href="{{ "/resume" | relURL }}">Resume</a>
-            <a href="{{ . | relURL }}" target="_blank" class="label inline">
-                <span>pdf</span>
-            </a>
-            {{ with $.Site.Params.ResumeJSON }}
-            <a href="{{ . | relURL }}" target="_blank" class="label inline">
-                <span>json</span>
-            </a>
+        <ul class="nav-links list-reset">
+            <!-- <li class="sidebar-site-name">
+                <h6 class="name">{{ .Site.Params.Name }}</h6>
+                {{ $twitter := .Site.Params.Twitter }}
+                <a class="twitter" href="//twitter.com/{{ $twitter }}">@{{ $twitter }}</a>
+            </li> -->
+            {{ range .Site.Params.MainMenu.Link }}
+            <li><a href="{{ .url | relURL }}">{{ .name }}</a></li>
             {{ end }}
-        </li>
-        {{ end }}
-    </ul>
+            {{ with $.Site.Params.ResumePDF }}
+            <li>
+                <a href="{{ "/resume" | relURL }}">Resume</a>
+                <a href="{{ . | relURL }}" target="_blank" class="label inline">
+                    <span>pdf</span>
+                </a>
+                {{ with $.Site.Params.ResumeJSON }}
+                <a href="{{ . | relURL }}" target="_blank" class="label inline">
+                    <span>json</span>
+                </a>
+                {{ end }}
+            </li>
+            {{ end }}
+        </ul>
     </nav>
 
     {{ block "main" . }}

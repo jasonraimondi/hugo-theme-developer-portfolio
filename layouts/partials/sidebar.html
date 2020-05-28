@@ -2,7 +2,7 @@
 
 <ul class="list-reset">
     <li class="sidebar-title">
-        <h6 class="title">{{ .Site.Params.ProjectsMenu.Title }}</h6>
+        <h6 class="nav-block">{{ .Site.Params.ProjectsMenu.Title }}</h6>
     </li>
     {{ range .Site.Params.ProjectsMenu.Link }}
     <li><a href="{{ .url | relURL }}">{{ .name }}</a></li>
@@ -11,7 +11,7 @@
 
 <ul class="list-reset">
     <li class="sidebar-title">
-        <h6 class="title">{{ .Site.Params.ExternalMenu.Title }}</h6>
+        <h6 class="nav-block">{{ .Site.Params.ExternalMenu.Title }}</h6>
     </li>
     {{ range .Site.Params.ExternalMenu.Link }}
     <li><a href="{{ .url | relURL }}" target="_blank" rel="nofollow">{{ .name }}</a></li>

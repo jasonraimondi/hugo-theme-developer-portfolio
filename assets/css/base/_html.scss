@@ -1,6 +1,8 @@
 html {
   height: 100%;
   width: 100%;
+  font-weight: var(--font-weight-light);
+
   @media (prefers-color-scheme: dark) {
     background-color: var(--black);
   }
