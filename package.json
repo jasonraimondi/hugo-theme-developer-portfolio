@@ -3,8 +3,8 @@
   "license": "MIT",
   "version": "0.0.0-rc1",
   "dependencies": {
-    "postcss-cli": "^6.1.3",
-    "postcss-preset-env": "^6.7.0"
+    "postcss-cli": "*",
+    "postcss-preset-env": "*"
   },
   "browserslist": [
     "last 1 version",
