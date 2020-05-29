@@ -1,14 +1,6 @@
-{{ $menu := resources.Get "js/menu.js" }}
-
 <!-- Minify and fingerprint on production build only -->
 {{ if .Site.IsServer }}
-    {{ $bundle := slice $menu | resources.Concat "js/bundle.js" }}
-    <script src="{{ $bundle.Permalink | relURL }}"></script>
-
     <script>console.log('Skipping Analytics');</script>
 {{ else }}
-    {{ $bundle := slice $menu | resources.Concat "js/bundle.js" | minify | fingerprint }}
-    <script src="{{ $bundle.Permalink | relURL }}"></script>
-
     {{ .Site.Params.AnalyticsSnippet | safeHTML }}
 {{ end }}
