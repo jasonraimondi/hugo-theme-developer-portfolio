@@ -1,11 +1,11 @@
 name = "hugo-theme-developer-portfolio"
 license = "MIT"
 licenselink = "https://github.com/jasonraimondi/hugo-theme-developer-portfolio/blob/master/LICENSE"
-description = ""
-homepage = "https://jasonraimondi.com"
-tags = ["blog"]
-features = []
-min_version = "0.50"
+description = "A developer portfolio theme"
+homepage = "https://hugo-theme-developer-portfolio.netlify.app"
+tags = ["developer","blog"]
+features = ["nightmode"]
+min_version = "0.64"
 
 [author]
   name = "Jason Raimondi"
