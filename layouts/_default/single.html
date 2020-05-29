@@ -1,4 +1,27 @@
+{{ define "breadcrumbnav" }}
+{{ if .p1.Parent }}
+{{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
+{{ else if not .p1.IsHome }}
+{{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+{{ end }}
+<li{{ if eq .p1 .p2 }} class="active"{{ end }}>
+  <a href="{{ .p1.Permalink }}">{{ if eq .p1.Title .p1.Site.Home.Title }}{{ template "homeicon" }}{{ else }}{{ .p1.Title }}{{ end }}</a>
+</li>
+{{ end }}
+
+{{ define "homeicon" }}
+<svg class="homeicon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+<g><path d="M500,71.3l-490,490l91.9,91.9l91.9-91.9L255,928.8h183.8V745h122.5v183.8H745l61.3-367.5l91.9,91.9l91.9-91.9L500,71.3z"/></g>
+</svg>
+{{ end }}
+
 {{ define "main" }}
+
+<ul  class="breadcrumbs">
+  {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+</ul>
+
+
 <article class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
         {{ partial "image.html" . }}
@@ -50,19 +73,15 @@
             {{ .Content }}
         </article>
     </section>
-{{ if .Params.tags }}
+{{ $related := .Site.RegularPages.RelatedIndices . "tags" "date" | first 5 }}
+{{ with $related }}
     <section class="related-posts">
         <hr>
         <h4>Related Posts</h4>
-        {{ $currentPagePermalink := .Permalink }}
-        {{ $tags := .Params.tags }}
         <ul class="list-reset">
-    {{ range .Site.Pages }}
-        {{ $isMatchTags := intersect $tags .Params.tags | len | lt 0 }}
-        {{ if and $isMatchTags (ne .Permalink $currentPagePermalink) }}
-            <li><a href="{{ .Permalink | relURL }}">{{ .Title }}</a></li>
-        {{ end }}
-    {{ end }}
+        {{ range . }}
+	    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+	    {{ end }}
         </ul>
     </section>
 {{ end }}
@@ -74,7 +93,7 @@
 {{ end }}
 </article>
 
-{{ with $.Site.Params.EditLink }}
+{{ with .Site.Params.EditLink }}
 <p style="text-align: center">
     <small>Feel free to make any fixes on <a href="{{ .Link }}">{{ .Name }}</a></small>
 </p>

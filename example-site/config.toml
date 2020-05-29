@@ -1,5 +1,5 @@
 baseurl = "/"
-title = "Full Stack Software Engineer"
+title = "Software Engineer"
 theme ="hugo-theme-developer-portfolio"
 languageCode = "en-us"
 enableEmoji = true
@@ -19,7 +19,7 @@ pagination = 20
 
 [Params]
   title = "jasonraimondi.com"
-  description = "I am Jason Raimondi, a Full Stack Software Engineer based in Los Angeles. My focus has been in web systems, building and deploying server and client web applications. I am a technologist and all around computer geek; give me a computer and I will be hacking in minutes, and occupied for days."
+  description = "I am Jason Raimondi, a Software Engineer based in Los Angeles. My focus has been in web systems, building and deploying server and client web applications. I am a technologist and all around computer geek; give me a computer and I will be hacking in minutes, and occupied for days."
   twitter = "jsonmamondi"
   name = "Jason Raimondi"
   email = "jason@raimondi.us"

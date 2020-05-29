@@ -1,7 +1,19 @@
 {{ define "main" }}
+
+<!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
+{{ with .Content }}
+<article>
+    {{ . }}
+</article>
+{{ end }}
+
 <ul class="list-reset post-list">
-    {{ range .Data.Pages.ByDate.Reverse }}
+    {{ range .Paginator.Pages.ByDate.Reverse }}
         {{ partial "page_list.html" . }}
     {{ end }}
 </ul>
+
+<div class="paginator">
+    {{ partial "pagination.html" . }}
+</div>
 {{ end }}

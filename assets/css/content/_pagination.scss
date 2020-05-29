@@ -41,3 +41,9 @@
     }
 
 }
+
+.page-item.active .page-link {
+    background-color: var(--grey-dark);
+    cursor: default;
+    pointer-events: none;
+}

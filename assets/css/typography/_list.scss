@@ -60,6 +60,30 @@ ol {
   }
 }
 
+.breadcrumbs {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+
+  li {
+    margin-left: 0.25rem;
+    padding-left: 0;
+
+    &::after {
+      content: "/";
+    }
+
+    &:last-child {
+      margin-left: 0.25rem;
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+}
+
 .list-inline {
   & li {
     display: inline-block;
