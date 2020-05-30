@@ -9,10 +9,14 @@
 
     <nav class="main-nav">
         <a class="avatar" href="/">
+            {{ $smallWEBP := .Site.Params.ProfileURL.SmallWEBP }}
+            {{ $largeWEBP := .Site.Params.ProfileURL.LargeWEBP }}
+            {{ $smallJPG := .Site.Params.ProfileURL.SmallJPG }}
+            {{ $largeJPG := .Site.Params.ProfileURL.LargeJPG }}
             <picture>
-<!--            <source srcset="{{ .Site.Params.ProfileURL.SmallWEBP }}, {{ .Site.Params.ProfileURL.LargeWEBP }} 2x" type="image/webp">-->
-                <source srcset="{{ .Site.Params.ProfileURL.SmallJPG }}, {{ .Site.Params.ProfileURL.LargeJPG }} 2x" type="image/jpeg">
-                <img src="{{ .Site.Params.ProfileURL.SmallJPG }}" alt="{{ .Site.Params.Name }}'s Profile Picture">
+                <!-- <source srcset="{{ $smallWEBP }}, {{ $largeWEBP }} 2x" type="image/webp"> -->
+                <source srcset="{{ $smallJPG }}, {{ $largeJPG }} 2x" type="image/jpeg">
+                <img src="{{ $smallJPG }}" alt="{{ .Site.Params.Name }}'s Profile Picture">
             </picture>
         </a>
 
