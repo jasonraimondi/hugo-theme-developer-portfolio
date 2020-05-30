@@ -1,15 +1,15 @@
 .main-content {
   @extend .width-constrain;
   height: 100%;
+  display: block;
 }
 
 .main-nav {
-  display: flex;
-  flex-direction: column;
   margin-top: 1rem;
 
   @media (--large) {
-    flex-direction: row;
+    display: flex;
+    align-items: center;
     margin-top: 2rem;
   }
 
@@ -20,9 +20,14 @@
   }
 
   .avatar {
+    display: block;
     grid-area: avatar;
-    height: 50px;
+    height: 4rem;
     margin-bottom: 0.5rem;
+
+    @media (--large) {
+      height: 6rem;
+    }
 
     img {
       height: 100%;
