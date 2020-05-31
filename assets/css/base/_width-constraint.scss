@@ -23,9 +23,10 @@
     max-width: var(--container-xxl);
   }
   > .post-container {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
+    margin: 1rem 0 2rem;
+    display: block;
+    //display: flex;
+    //flex-direction: column;
     flex: 1;
     .post-body {
       height: 100%;

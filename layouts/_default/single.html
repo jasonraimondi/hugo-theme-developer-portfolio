@@ -30,16 +30,16 @@
             <span itemprop="author" itemscope itemtype="http://schema.org/Person" style="display: none;">
                 <span itemprop="name">{{ .Site.Params.Name }}</span>
             </span>
-            Published:
             <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
-            {{ .Date.Format "January 2, 2006" }}
+                {{ .Date.Format "January 2, 2006" }}
             </time>
             {{ if ne .Date .Page.Lastmod }}
-                | Last Modified:
+                &nbsp;| Modified:&nbsp;
                 <time datetime="{{ .Page.Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
-                {{ .Page.Lastmod.Format "January 2, 2006" }}
+                    {{ .Page.Lastmod.Format "January 2, 2006" }}
                 </time>
             {{ end }}
+            {{ partial "edit-on-github.html" . }}
         </p>
     </header>
     <section id="post-content">
@@ -63,41 +63,25 @@
                             <a href="{{ .Permalink }}" class="label inline">{{ $tag | urlize }}</a>
                         </li>
                     {{ end }}
-                {{ end }}
+            {{ end }}
             {{ end }}
         </ul>
         <article class="post-body" itemprop="articleBody">
             {{ if .Params.toc }}
-                {{ .TableOfContents }}
+            {{ .TableOfContents }}
             {{ end}}
             {{ .Content }}
         </article>
     </section>
-{{ $related := .Site.RegularPages.RelatedIndices . "tags" "date" | first 5 }}
-{{ with $related }}
-    <section class="related-posts">
-        <hr>
-        <h4>Related Posts</h4>
-        <ul class="list-reset">
-        {{ range . }}
-	    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-	    {{ end }}
-        </ul>
-    </section>
-{{ end }}
-{{ if .Params.comments }}
+
+    {{ partial "related-posts.html" . }}
+
+    {{ if .Params.comments }}
     <section>
-        <hr>
         {{ template "_internal/disqus.html" . }}
     </section>
-{{ end }}
+    {{ end }}
 </article>
-
-{{ with .Site.Params.EditLink }}
-<p style="text-align: center">
-    <small>Feel free to make any fixes on <a href="{{ .Link }}">{{ .Name }}</a></small>
-</p>
-{{ end }}
 
 <script>
     const addHeaderDeepLinks = function() {
@@ -142,4 +126,5 @@
     addHeaderDeepLinks();
     updateCreditWithLink();
 </script>
+
 {{ end }}

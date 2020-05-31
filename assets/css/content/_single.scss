@@ -1,0 +1,15 @@
+.link-to-github {
+  font-weight: 400;
+  border-radius: 3px;
+  display: inline-block;
+  margin-left: 1rem;
+  position: relative;
+  top: -2px;
+
+  svg {
+    position: relative;
+    top: 2px;
+    max-height: 1rem;
+    fill: currentColor;
+  }
+}
